@@ -1,0 +1,38 @@
+version: "3"
+
+networks:
+  stack_ponte:
+    external: true
+
+services:
+  frontend_centrallatina_prod:
+    container_name: "frontend_centrallatina_prod"
+    image: "webdevops/apache:latest"
+    restart: always
+    working_dir: /app
+    volumes:
+      - ${APPPATH}/front/dist:/app
+    networks:
+      - stack_ponte
+    ports:
+      - "8780:80"
+    labels:
+      - "traefik.enable=true"
+      - traefik.http.routers.frontcentrallatina.rule=Host(`centrallatina.${DOMAIN}`, `ocentrallatina.com.br`,`www.ocentrallatina.com.br`)
+      - traefik.http.services.frontcentrallatina.loadbalancer.server.port=80
+
+  # golangcentrallatina_prod:
+  #   container_name: "golangcentrallatina_prod"
+  #   restart: always
+  #   image: golang:1.15.7
+  #   volumes:
+  #     - ${APPPATH}/back:/app
+  #   ports:
+  #     - 3037:8000
+  #   networks:
+  #     - stack_ponte
+  #   command: "/bin/sh -c 'cd /app && ls && ./main'"
+  #   labels:
+  #     - "traefik.enable=true"
+  #     - traefik.http.routers.gocentrallatina.rule=Host(`gocentrallatina.${DOMAIN}`)
+  #     - traefik.http.services.gocentrallatina.loadbalancer.server.port=8000

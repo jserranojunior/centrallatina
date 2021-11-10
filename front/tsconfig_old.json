@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "ESNext",
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "baseUrl": ".",
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost", "es6"],
+    "types": ["vite/client", "node", "jest", "@types/jest", "@types/mocha"],
+    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "test/App.spec.ts"
+  ],
+  "exclude": ["node_modules"],
+  "rules": {
+    // disable the rule for all files
+    "@typescript-eslint/explicit-module-boundary-types": "off"
+  },
+  "overrides": [
+    {
+      // enable the rule specifically for TypeScript files
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": ["error"]
+      }
+    }
+  ]
+}

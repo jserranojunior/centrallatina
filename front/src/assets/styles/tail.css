@@ -1,0 +1,203 @@
+/* eslint-disable */
+
+@tailwind base;
+
+.h1 {
+  @apply text-2xl;
+}
+@tailwind components;
+/* .painel {
+  @apply bg-white rounded w-full px-3 py-2 shadow;
+}
+.painel-header {
+  @apply text-center border-b border-gray-200 py-2;
+}
+.painel-body {
+  @apply border-b border-gray-200 py-2;
+}
+.painel-footer {
+  @apply py-2;
+} */
+
+
+
+.form-tail {
+  @apply appearance-none border w-full py-1 px-2 text-gray-700 leading-tight bg-white text-sm;
+}
+.form-tail:focus {
+  @apply outline-none shadow;
+}
+.label-tail {
+  @apply text-gray-700 text-sm font-bold mb-1;
+}
+
+.callout-warning-tail {
+  @apply bg-yellow-100 border-l-4 border-yellow-500 mt-3 p-2 rounded shadow font-bold;
+}
+
+.callout-danger-tail {
+  @apply bg-red-100 border-l-4 border-red-500 mt-3 p-2 rounded shadow font-bold;
+}
+
+.callout-success-tail {
+  @apply bg-green-100 border-l-4 border-green-500 mt-3 p-2 rounded shadow font-bold;
+}
+
+.btn-tail {
+  @apply py-1 px-2 rounded text-center;
+}
+.btn-sm-tail {
+  @apply p-1 rounded text-center;
+}
+
+.btn-primary-tail {
+  @apply bg-central-1 text-white font-bold py-1 px-2 rounded cursor-pointer text-center;
+}
+
+.btn-primary-tail:hover {
+  @apply bg-blue-700 text-white;
+}
+.btn-success-tail {
+  @apply bg-green-600 text-white font-bold py-1 px-2 rounded cursor-pointer text-center;
+}
+
+.btn-success-tail:hover {
+  @apply bg-green-700 text-white;
+}
+
+.btn-warning-tail {
+  @apply bg-central-2 text-white font-bold py-1 px-2 rounded cursor-pointer text-center;
+}
+
+.btn-warning-tail:hover {
+  @apply bg-yellow-700 text-white;
+}
+
+.btn-danger-tail {
+  @apply bg-red-700 text-white font-bold py-1 px-2 rounded cursor-pointer text-center;
+}
+
+.btn-danger-tail:hover {
+  @apply bg-red-800 text-white;
+}
+.form-select-arrow {
+  @apply pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700;
+}
+.btn-gray-tail {
+  @apply bg-gray-700 text-white font-bold py-1 px-2 rounded cursor-pointer text-center;
+}
+
+
+
+.table-tail {
+  @apply table-auto w-full;
+}
+
+.table-tail > tbody > tr,
+.table-tail > thead > tr {
+  @apply border-b border-gray-100 my-1 p-1;
+}
+
+.table-tail > tbody > tr > td,
+.table-tail > thead > tr > td {
+  @apply px-1;
+}
+
+.table-tail > tbody > tr:hover {
+  @apply bg-blue-200 cursor-pointer;
+}
+
+.table-tail-adm > tbody > tr:hover {
+  @apply bg-gray-800 cursor-pointer;
+}
+
+
+.table-border-r > thead > tr > th,
+.table-border-r > tbody > tr > td {
+  @apply border-r;
+}
+
+.table-striped-tail > tbody > tr:nth-child(odd) {
+  @apply bg-blue-100;
+}
+.table-bordered-tail,
+.table-bordered-tail > thead > tr,
+.table-bordered-tail > tbody > tr,
+.table-bordered-tail > thead > tr > th,
+.table-bordered-tail > tbody > tr > td {
+  @apply border  border-gray-300;
+}
+
+@tailwind utilities;
+.border-warning {
+  @apply border-yellow-500;
+}
+
+.border-success {
+  @apply border-green-500;
+}
+
+.border-danger {
+  @apply border-red-500;
+}
+
+.border-primary {
+  @apply border-green-500;
+}
+
+@font-face {
+  font-family: bradhitc;
+  font-weight: 400;
+  src: url("/fonts/BRADHITC.ttf") format("ttf");
+}
+
+.text-acolher,
+s {
+  font-family: bradhitc;
+  color: #203864;
+  text-decoration: none;
+}
+
+
+
+.new-nav-btn{
+  @apply px-1 py-2 text-xs rounded-lg   text-gray-400 font-bold;
+
+}
+.new-nav-btn:hover {
+  @apply text-gray-400 bg-gray-200;
+}
+.new-nav-btn:focus {
+  @apply bg-gray-600  
+}
+
+.nav-btn-exit {
+  @apply bg-red-800 text-white;
+}
+.nav-btn-exit:hover {
+  @apply bg-red-700 text-white;
+}
+.nav-btn-exit:focus {
+  @apply bg-red-700 text-white;
+}
+
+
+.nav-btn-adm{
+  @apply bg-gray-800 text-white
+}
+.nav-btn-adm:hover {
+  @apply bg-gray-800 text-white;
+}
+.nav-btn-adm:focus {
+  @apply bg-gray-500 text-white;
+}
+
+.nav-disable {
+  @apply bg-gray-600 text-white;
+}
+.nav-disable:hover {
+  @apply bg-gray-600 cursor-default
+}
+.nav-disable:focus {
+  @apply bg-gray-600 text-white;
+}

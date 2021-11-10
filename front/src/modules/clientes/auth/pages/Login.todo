@@ -1,0 +1,12 @@
+!! Regras de negócio do Login
+
+Regras:
+  ☐ E-mail não pode ser vazio.  
+  ☐ Senha não pode ser vazio.
+  ☐ Caso e-mail ou senha sejam vazios exibir mensagem de notificação.
+  ☐ Desabilitar o click quando já foi clicado e estiver validando.
+
+
+
+  Criar tabela com usuarios adm
+Criar um get no usuario caso for adm para criar o tokenadm
