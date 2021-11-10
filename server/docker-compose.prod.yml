@@ -18,7 +18,7 @@ services:
       - "8780:80"
     labels:
       - "traefik.enable=true"
-      - traefik.http.routers.frontcentrallatina.rule=Host(`centrallatina.${DOMAIN}`, `ocentrallatina.com.br`,`www.ocentrallatina.com.br`)
+      - traefik.http.routers.frontcentrallatina.rule=Host(`centrallatina.${DOMAIN}`)
       - traefik.http.services.frontcentrallatina.loadbalancer.server.port=80
 
   # golangcentrallatina_prod:

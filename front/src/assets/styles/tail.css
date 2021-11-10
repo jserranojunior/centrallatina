@@ -19,7 +19,9 @@
   @apply py-2;
 } */
 
-
+.text{
+  @apply text-yellow-700
+}
 
 .form-tail {
   @apply appearance-none border w-full py-1 px-2 text-gray-700 leading-tight bg-white text-sm;
