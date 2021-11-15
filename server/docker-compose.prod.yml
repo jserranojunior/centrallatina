@@ -26,7 +26,7 @@ services:
     restart: always
     image: golang:1.15.7
     volumes:
-      - ${APPPATH}/back:/app
+      - "${PATHCLIENTES}/centrallatina/back:/app"
     ports:
       - 3038:8000
     networks:
