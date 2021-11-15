@@ -21,18 +21,18 @@ services:
       - traefik.http.routers.frontcentrallatina.rule=Host(`frontcentrallatina.${DOMAIN}`)
       - traefik.http.services.frontcentrallatina.loadbalancer.server.port=3000
 
-  # centrallatina_back:
-  #   image: golang:1.16.3
-  #   container_name: "centrallatina_back"
-  #   networks:
-  #     - stack_ponte
-  #   ports:
-  #     - "5081:8000"
-  #   volumes:
-  #     - "${PATHCLIENTES}/centrallatina/back:/app"
-  #     - "${GOPATH}:/go"
-  #   command: "/bin/sh -c 'cd /app && reflex -c /app/reflex.conf'"
-  #   labels:
-  #     - "traefik.enable=true"
-  #     - "traefik.http.routers.backcentrallatina.rule=Host(`backcentrallatina.${DOMAIN}`)"
-  #     - "traefik.http.services.backcentrallatina.loadbalancer.server.port=8000"
+  centrallatina_back:
+    image: golang:1.16.3
+    container_name: "centrallatina_back"
+    networks:
+      - stack_ponte
+    ports:
+      - "5082:8000"
+    volumes:
+      - "${PATHCLIENTES}/centrallatina/back:/app"
+      - "${GOPATH}:/go"
+    command: "/bin/sh -c 'cd /app && reflex -c /app/reflex.conf'"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.backcentrallatina.rule=Host(`backcentrallatina.${DOMAIN}`)"
+      - "traefik.http.services.backcentrallatina.loadbalancer.server.port=8000"

@@ -43,7 +43,7 @@ class useApiConnect {
 
   // token: string | null | undefined, axiosImage: AxiosInstance, axiosWithoutToken: AxiosInstance, backApiUrl: string
   constructor() {
-    this.token = localStorage.getItem("token");
+    this.token = localStorage.getItem("tokenadm");
     this.backApiUrl = `${process.env.VUE_APP_BACK_ALBANK_API_URL}`;
     console.log(this.backApiUrl);
     this.axios = axios;

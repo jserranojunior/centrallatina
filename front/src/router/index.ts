@@ -8,6 +8,14 @@ import { createRouter, createWebHistory } from "vue-router";
 // import EditarConta from "@/modules/financeiro/pages/EditarConta.vue";
 import NotFound from "@/views/layouts/NotFound.vue";
 import Home from "@/modules/clientes/institucional/home.vue";
+import Homeadm from "@/modules/admin/Homeadm.vue";
+import LoginAdm from "@/modules/admin/authadm/pages/loginadm.vue";
+import Users from "@/modules/admin/user/pages/users.vue";
+import EditUser from "@/modules/admin/user/components/editUser.vue";
+import Cadastro from "@/modules/clientes/auth/pages/cadastro.vue";
+
+import { adminAuthMiddleware } from "./middlewares/adminAuthMiddleware";
+const { authadmin } = adminAuthMiddleware();
 
 const routes = [
   { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
@@ -15,6 +23,35 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/cadastro",
+    name: "Cadastro",
+    component: Cadastro,
+  },
+  {
+    path: "/admin",
+    name: "Admin",
+    component: Homeadm,
+    beforeEnter: [authadmin],
+  },
+  {
+    path: "/admin/login",
+    name: "LoginAdm",
+    component: LoginAdm,
+    beforeEnter: [authadmin],
+  },
+  {
+    path: "/admin/users",
+    name: "Users",
+    component: Users,
+    beforeEnter: [authadmin],
+  },
+  {
+    path: "/admin/users/edit",
+    name: "EditUser",
+    component: EditUser,
+    beforeEnter: [authadmin],
   },
 ];
 
