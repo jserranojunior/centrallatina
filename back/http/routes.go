@@ -33,5 +33,12 @@ func RegisterRoutes() {
 	router.Get("/verifytokenemailreset/:token", middlewares.CORSMiddleware, handlers.VerifyTokenEmailReset)
 	router.Get("/testemail", middlewares.CORSMiddleware, handlers.TestEmail)
 	router.Put("/resetpassword/:token", middlewares.CORSMiddleware, handlers.ResetPassword)
+	// services
+	router.Post("/services", middlewares.CORSMiddleware, handlers.ServiceCreate)
+	router.Get("/admin/servicestype/:type", middlewares.CORSMiddleware, middlewares.VerifyJwt, handlers.GetAllServicesType)
+
+	router.Get("/admin/services", middlewares.CORSMiddleware, middlewares.VerifyJwt, handlers.GetAllServices)
+	router.Get("/admin/services/:id", middlewares.CORSMiddleware, middlewares.VerifyJwt, handlers.GetService)
+	router.Put("/admin/services/:id", middlewares.CORSMiddleware, middlewares.VerifyJwt, handlers.ServiceUpdate)
 
 }

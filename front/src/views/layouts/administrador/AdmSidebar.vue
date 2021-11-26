@@ -19,18 +19,18 @@
     <router-link v-if="logged" to="/admin/users" class="nav-btn nav-btn-adm">
       <span>Clientes</span>
     </router-link>
-    <a v-if="logged" href="#" class="nav-btn nav-disable">
+    <router-link v-if="logged" to="/admin/recepcao" class="nav-btn nav-btn-adm">
       <span>Recepção</span>
-    </a>
-    <a v-if="logged" href="#" class="nav-btn nav-disable">
+    </router-link>
+    <router-link v-if="logged" to="/admin/atendimentos" class="nav-btn nav-btn-adm">
       <span>Advocacia</span>
-    </a>
-    <a v-if="logged" href="#" class="nav-btn nav-disable">
+    </router-link>
+    <router-link v-if="logged" to="/admin/atendimentos" class="nav-btn nav-btn-adm">
       <span>Consultoria</span>
-    </a>
-    <a v-if="logged" href="#" class="nav-btn nav-disable">
+    </router-link>
+    <router-link v-if="logged" to="/admin/atendimentos" class="nav-btn nav-btn-adm">
       <span>Rádio</span>
-    </a>
+    </router-link>
     <div v-if="logged" class="nav-btn nav-btn-exit cursor-pointer" @click="Logout()">
       <span>Sair</span>
     </div>

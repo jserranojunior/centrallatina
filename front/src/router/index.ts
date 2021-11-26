@@ -14,6 +14,11 @@ import Users from "@/modules/admin/user/pages/users.vue";
 import EditUser from "@/modules/admin/user/components/editUser.vue";
 import Cadastro from "@/modules/clientes/auth/pages/cadastro.vue";
 
+import Atendimentos from "@/modules/admin/acompanhamento/pages/atendimentos.vue";
+import Recepcao from "@/modules/admin/acompanhamento/pages/recepcao.vue";
+import setAtendimento from "@/modules/admin/acompanhamento/components/setAtendimento.vue";
+import emAtendimento from "@/modules/admin/acompanhamento/components/emAtendimento.vue";
+
 import { adminAuthMiddleware } from "./middlewares/adminAuthMiddleware";
 const { authadmin } = adminAuthMiddleware();
 
@@ -45,6 +50,30 @@ const routes = [
     path: "/admin/users",
     name: "Users",
     component: Users,
+    beforeEnter: [authadmin],
+  },
+  {
+    path: "/admin/atendimentos",
+    name: "Atendimentos",
+    component: Atendimentos,
+    beforeEnter: [authadmin],
+  },
+  {
+    path: "/admin/recepcao",
+    name: "Recepcao",
+    component: Recepcao,
+    beforeEnter: [authadmin],
+  },
+  {
+    path: "/admin/addatendimento",
+    name: "setAtendimento",
+    component: setAtendimento,
+    beforeEnter: [authadmin],
+  },
+  {
+    path: "/admin/edittendimento",
+    name: "emAtendimento",
+    component: emAtendimento,
     beforeEnter: [authadmin],
   },
   {

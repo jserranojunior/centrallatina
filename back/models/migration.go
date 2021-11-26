@@ -12,6 +12,7 @@ func MigrateDB() {
 	// add your models to be auto migrated here
 	db.AutoMigrate(&User{})
 	db.AutoMigrate(&Admin{})
+	db.AutoMigrate(&Service{})
 
 	// db.AutoMigrate(&ContasAPagars{})
 	// db.AutoMigrate(&ValoresContasAPagars{})

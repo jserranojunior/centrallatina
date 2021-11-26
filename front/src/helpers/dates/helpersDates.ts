@@ -27,3 +27,22 @@ export function dateUsToPtBr(data: string): string {
     return data;
   }
 }
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export function dateJstoUs(value: string | number | Date) {
+  const d = new Date(value);
+  let month = "" + (d.getMonth() + 1);
+  let day = "" + d.getDate();
+  const year = d.getFullYear();
+
+  if (month.length < 2) month = "0" + month;
+  if (day.length < 2) day = "0" + day;
+
+  return [year, month, day].join("-");
+}
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export function getJsHour(value: Date) {
+  const hour = value.getHours();
+  const minute = value.getMinutes();
+  return `${hour}:${minute}`;
+}

@@ -9,6 +9,8 @@ import { useInstitucional } from "@/modules/clientes/institucional/use/useInstit
 import useApiConnect from "@/modules/clientes/api/use/useApiConnect";
 import { useAuthAdm } from "@/modules/admin/authadm/use/useAuthAdm";
 
+import { useAtendimentos } from "@/modules/admin/acompanhamento/use/useAtendimentos";
+
 const ApiConnect = new useApiConnect();
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const Provides = () => {
@@ -20,4 +22,5 @@ export const Provides = () => {
   provide("institucional", useInstitucional());
   provide("users", useUsers());
   provide("resetpassword", useResetPassword());
+  provide("atendimentos", useAtendimentos());
 };

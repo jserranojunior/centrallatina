@@ -16,7 +16,7 @@
       <Sidebar></Sidebar>
     </template>
     <template #mainpage>
-      <div class="bg-gray-800 min-h-screen p-1">
+      <div class="bg-whtie-800 min-h-screen p-1">
         <slot name="body"></slot>
       </div>
     </template>

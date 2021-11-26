@@ -24,7 +24,7 @@
 }
 
 .form-tail {
-  @apply appearance-none border w-full py-1 px-2 text-gray-700 leading-tight bg-white text-sm;
+  @apply appearance-none border border-gray-400 w-full py-1 px-4 text-gray-700 leading-tight bg-white text-sm;
 }
 .form-tail:focus {
   @apply outline-none shadow;
@@ -195,11 +195,11 @@ s {
 }
 
 .nav-disable {
-  @apply bg-gray-600 text-white;
+  @apply bg-gray-200 text-white;
 }
 .nav-disable:hover {
-  @apply bg-gray-600 cursor-default
+  @apply bg-gray-200 cursor-default
 }
 .nav-disable:focus {
-  @apply bg-gray-600 text-white;
+  @apply bg-gray-200 text-white;
 }
