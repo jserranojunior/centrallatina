@@ -1,6 +1,40 @@
 <template>
   <Administrador>
     <template #body>
+      <Modal :nome="'modalFinalizarAtendimento'">
+        <template #header> <span>Encerrar Atendimento</span> </template>
+        <template #body
+          ><span>
+            <div>
+              <div class="flex">
+                <div class="w-full">
+                  <div class="form-group text-center">
+                    <h3>Deseja fazer a confirmação?</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </span>
+        </template>
+        <template #footer
+          ><div class="w-full">
+            <div class="flex flex-wrap mt-1 justify-between">
+              <div class="w-auto">
+                <button class="btn-danger-tail m-1" @click="voltar()">Voltar</button>
+              </div>
+              <div class="w-auto ml-1">
+                <button
+                  class="btn-primary-tail m-1"
+                  @click="finishAtendimento(atendimentoSelecionado)"
+                >
+                  Confirmar
+                </button>
+              </div>
+            </div>
+          </div>
+        </template>
+      </Modal>
+
       <div class="my-2">
         <div class="flex flex-wrap justify-center pt-4">
           <div class="w-full sm:w-full md:w-1/2 lg:w-1/2 mx-auto px-6">
@@ -49,7 +83,7 @@
                     <div class="w-full md:w-1/3 px-1">
                       <div
                         class="btn-primary-tail mt-4"
-                        @click="updateUserAtendimento(atendimentoSelecionado)"
+                        @click="modalFinalizarAtendimento()"
                       >
                         Finalizar
                       </div>
@@ -68,16 +102,40 @@
 <script>
 import { inject } from "vue";
 import Administrador from "@/views/layouts/administrador/Administrador.vue";
+import Modal from "@/views/modals/Modal.vue";
 
 export default {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   components: {
     Administrador,
+    Modal,
   },
   setup() {
     const useAtendimentos = inject("atendimentos");
-    const { inputsUserAtendimentos, atendimentoSelecionado } = useAtendimentos;
-    return { inputsUserAtendimentos, atendimentoSelecionado };
+    const useModal = inject("modal");
+
+    const {
+      inputsUserAtendimentos,
+      atendimentoSelecionado,
+      finishAtendimento,
+    } = useAtendimentos;
+
+    const { updateModal } = useModal;
+
+    function modalFinalizarAtendimento() {
+      updateModal({ name: "modalFinalizarAtendimento", show: true });
+    }
+    function voltar() {
+      updateModal({ name: "modalFinalizarAtendimento", show: false });
+    }
+
+    return {
+      inputsUserAtendimentos,
+      atendimentoSelecionado,
+      finishAtendimento,
+      modalFinalizarAtendimento,
+      voltar,
+    };
   },
 };
 </script>

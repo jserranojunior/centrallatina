@@ -135,7 +135,6 @@ export default {
     async function update() {
       await updatePassword(route.params.token).then((res) => {
         updatedPass = res;
-        console.log(updatedPass);
       });
     }
 

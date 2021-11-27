@@ -26,9 +26,7 @@ export const useAuthAdm = () => {
       return await HttpAuth.loginadm(state.loginInputs)
         .then(async (res) => {
           if (res && res.data) {
-            console.log(res.data);
             await setToken(res.data.token).then(async (response) => {
-              console.log("resposta setToken" + response);
               if (response) {
                 state.authadm.data = "Logado com sucesso!";
                 if (state.authadm.tokenadm) {
@@ -38,10 +36,8 @@ export const useAuthAdm = () => {
                   state.userID = res;
                   router.push({ name: "Admin" });
                 });
-                // console.log("fazendo redirect");
               }
             });
-            console.log(state.authadm.data);
           }
         })
         .catch((err) => {

@@ -29,7 +29,7 @@ export const useUsers = () => {
           state.updateInputs = res.data.data;
           state.updateInputs.dtBirth = dateUsToPtBr(res.data.data.birth_date);
           state.updateInputs.password = undefined;
-          console.log(state.updateInputs);
+
           router.push({ name: "EditUser" });
         }
       })
@@ -47,7 +47,6 @@ export const useUsers = () => {
         if (res) {
           state.updateInputs = res.data.data;
 
-          console.log(state.updateInputs);
           getAllUsers();
           router.push({ name: "Users" });
         }

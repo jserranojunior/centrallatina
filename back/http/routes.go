@@ -36,6 +36,7 @@ func RegisterRoutes() {
 	// services
 	router.Post("/services", middlewares.CORSMiddleware, handlers.ServiceCreate)
 	router.Get("/admin/servicestype/:type", middlewares.CORSMiddleware, middlewares.VerifyJwt, handlers.GetAllServicesType)
+	router.Get("/admin/servicespendente", middlewares.CORSMiddleware, middlewares.VerifyJwt, handlers.GetAllServicesPendente)
 
 	router.Get("/admin/services", middlewares.CORSMiddleware, middlewares.VerifyJwt, handlers.GetAllServices)
 	router.Get("/admin/services/:id", middlewares.CORSMiddleware, middlewares.VerifyJwt, handlers.GetService)

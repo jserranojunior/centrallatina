@@ -16,6 +16,7 @@ type Service struct {
 	Data           string `gorm:"size:20; not null;" json:"data"`
 	Hora           string `gorm:"size:20; not null;" json:"hora"`
 	Type           string `gorm:"size:255; not null;" json:"type"`
+	Status         int    `gorm:"size:255; not null;" json:"status"`
 	Observacao     string `gorm:"size:255;" json:"observacao"`
 	Encaminhamento string `gorm:"size:255;" json:"encaminhamento"`
 }

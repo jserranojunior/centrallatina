@@ -20,7 +20,6 @@ export const useResetPassword = () => {
           if (res && res.data) {
             state.verifyToken = true;
           }
-          console.log(res);
         })
         .catch((err) => {
           console.log("abaixo erro verify token");
@@ -38,9 +37,7 @@ export const useResetPassword = () => {
       };
       return await HttpReset.setNewPassword(token, data)
         .then((res) => {
-          console.log(res);
           if (res && res.data && res.data.data && res.data.data.ID) {
-            console.log(res.data.data.ID);
             state.updatedUserPassword = true;
             return true;
           }

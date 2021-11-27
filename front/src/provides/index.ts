@@ -11,6 +11,8 @@ import { useAuthAdm } from "@/modules/admin/authadm/use/useAuthAdm";
 
 import { useAtendimentos } from "@/modules/admin/acompanhamento/use/useAtendimentos";
 
+import { useModal } from "@/views/modals/use/useModal";
+
 const ApiConnect = new useApiConnect();
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const Provides = () => {
@@ -23,4 +25,5 @@ export const Provides = () => {
   provide("users", useUsers());
   provide("resetpassword", useResetPassword());
   provide("atendimentos", useAtendimentos());
+  provide("modal", useModal());
 };

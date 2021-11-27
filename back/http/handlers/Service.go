@@ -42,10 +42,20 @@ func GetAllServices(c *gin.Context) {
 }
 
 //  GetAllServices getAll
+func GetAllServicesPendente(c *gin.Context) {
+	var services []models.Service
+	DB.Where("status", 0).Preload("User").Find(&services)
+
+	c.JSON(200, gin.H{
+		"data": &services,
+	})
+}
+
+//  GetAllServices getAll
 func GetAllServicesType(c *gin.Context) {
 	var services []models.Service
 
-	DB.Where("type", c.Param("type")).Preload("User").Find(&services)
+	DB.Where("type", c.Param("type"), "status", 2).Preload("User").Find(&services)
 
 	c.JSON(200, gin.H{
 		"data": &services,

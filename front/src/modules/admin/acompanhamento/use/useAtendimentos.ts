@@ -35,6 +35,38 @@ export const useAtendimentos = () => {
     },
   });
 
+  async function updateAtendimento(data: Record<string, unknown>) {
+    return await HttpAtendimentos.updateAtendimento(data)
+      .then((res) => {
+        if (res) {
+          router.push({ name: "Atendimentos" });
+        }
+      })
+      .catch((err) => {
+        console.log("abaixo erro login");
+        console.log(err.response.data.erro);
+      });
+  }
+
+  async function finishAtendimento(data: Record<string, any>) {
+    data.status = 1;
+
+    return await HttpAtendimentos.updateAtendimento(data)
+      .then((res) => {
+        if (res) {
+          if (data.encaminhamento > "") {
+            addAtendimento(data).then(() => {
+              router.push({ name: "Atendimentos" });
+            });
+          }
+        }
+      })
+      .catch((err) => {
+        console.log("abaixo erro login");
+        console.log(err.response.data.erro);
+      });
+  }
+
   async function selectUserAtendimento(id: number): Promise<void> {
     state.idUserSelected = id;
 
@@ -73,14 +105,20 @@ export const useAtendimentos = () => {
     const dataAtualJs = new Date();
     data.data = dateJstoUs(dataAtualJs);
     data.hora = getJsHour(dataAtualJs);
-    console.log(data);
+    data.status = 0;
+    data.encaminhamento = "";
+
+    if (data.ID) {
+      delete data.ID;
+    }
+
     if (data.type) {
       return await HttpAtendimentos.createAtendimento(data)
         .then((res) => {
           if (res) {
             state.inputsUserAtendimentos = res.data.data;
             console.log(state.inputsUserAtendimentos);
-            alert("Atendimento Adicionado");
+
             router.push({ name: "Recepcao" });
           }
         })
@@ -94,6 +132,18 @@ export const useAtendimentos = () => {
   }
   async function getAllAtendimentos() {
     return await HttpAtendimentos.getAllAtendimentos()
+      .then((res) => {
+        if (res) {
+          state.atendimentos = res.data.data;
+        }
+      })
+      .catch((err) => {
+        console.log("abaixo erro login");
+        console.log(err.response.data.erro);
+      });
+  }
+  async function getAllAtendimentosPendente() {
+    return await HttpAtendimentos.getAllAtendimentosPendente()
       .then((res) => {
         if (res) {
           state.atendimentos = res.data.data;
@@ -123,5 +173,8 @@ export const useAtendimentos = () => {
     addAtendimento,
     getAtendimentoSelecionado,
     getAllAtendimentosType,
+    updateAtendimento,
+    getAllAtendimentosPendente,
+    finishAtendimento,
   };
 };

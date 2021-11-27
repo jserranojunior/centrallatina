@@ -39,9 +39,7 @@ export const useAuth = () => {
       return await HttpAuth.login(state.loginInputs)
         .then(async (res) => {
           if (res && res.data) {
-            console.log(res.data);
             await setToken(res.data.token).then(async (response) => {
-              console.log("resposta setToken" + response);
               if (response) {
                 state.auth.data = "Logado com sucesso!";
                 state.logged = true;
@@ -55,7 +53,6 @@ export const useAuth = () => {
                 // console.log("fazendo redirect");
               }
             });
-            console.log(state.auth.data);
           }
         })
         .catch((err) => {

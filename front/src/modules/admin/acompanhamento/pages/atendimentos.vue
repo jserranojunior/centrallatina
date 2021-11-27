@@ -46,6 +46,8 @@
                   <th>Nome</th>
                   <th>Local de Atendimento</th>
                   <th>Observação</th>
+                  <th>Data</th>
+                  <th>Hora</th>
                 </tr>
               </thead>
 
@@ -58,6 +60,9 @@
                   <td>{{ atendimento.ID }}</td>
                   <td>{{ atendimento.user.name }}</td>
                   <td>{{ atendimento.type }}</td>
+                  <td>{{ dateUsToPtBr(atendimento.data) }}</td>
+                  <td>{{ atendimento.hora }}</td>
+
                   <td>{{ limitarTexto(atendimento.observacao, 10) }}</td>
                 </tr>
               </tbody>
@@ -82,12 +87,12 @@ export default {
     const useAtendimentos = inject("atendimentos");
     const {
       atendimentos,
-      getAllAtendimentos,
+      getAllAtendimentosPendente,
       getAtendimentoSelecionado,
     } = useAtendimentos;
 
     onBeforeMount(async () => {
-      await getAllAtendimentos();
+      await getAllAtendimentosPendente();
     });
     return { atendimentos, dateUsToPtBr, getAtendimentoSelecionado, limitarTexto };
   },

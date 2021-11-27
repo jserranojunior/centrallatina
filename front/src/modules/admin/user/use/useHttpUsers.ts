@@ -1,4 +1,4 @@
-import useApiConnect from "@/modules/admin/apiadm/use/useApiAlbankConnect";
+import useApiConnect from "@/modules/admin/apiadm/use/useApiConnect";
 import { AxiosResponse } from "axios";
 
 class useHttpAuth {
