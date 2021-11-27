@@ -38,23 +38,27 @@
       <div class="my-2">
         <div class="flex flex-wrap justify-center pt-4">
           <div class="w-full sm:w-full md:w-1/2 lg:w-1/2 mx-auto px-6">
-            <SCard class="bg-gray-600">
+            <SCard class="text-whitetheme-9 bg-whitetheme-1 dark:bg-darktheme-7">
               <template #header>
-                <span class="text-white font-bold"> Atendimento </span></template
+                <span class="text-whitetheme-9 font-bold"> Atendimento </span></template
               >
               <template #body>
-                <div class="mt-2 dark:bg-gray-600 p-1">
-                  <p class="text-white pt-2 ml-2 dark:bg-gray-600 text-center">
+                <div class="mt-2 dark:bg-darktheme-7 p-1">
+                  <p
+                    class="text-whitetheme-9 pt-2 ml-2 bg-whitetheme-1 dark:bg-darktheme-7 text-center"
+                  >
                     {{ atendimentoSelecionado.user.name }}
                   </p>
 
-                  <p class="text-white pt-2 ml-2 dark:bg-gray-600 text-center">
+                  <p
+                    class="text-whitetheme-9pt-2 ml-2 bg-whitetheme-1 dark:bg-darktheme-7 text-center"
+                  >
                     Local de Atendimento: {{ atendimentoSelecionado.type }}
                   </p>
 
                   <textarea
                     v-model="atendimentoSelecionado.observacao"
-                    class="form-textarea mt-1 block w-full dark:bg-gray-600 form-tail text-white"
+                    class="form-textarea mt-1 block w-full bg-whitetheme-1 dark:bg-darktheme-7 form-tail text-whitetheme-9a"
                     rows="10"
                     placeholder="Observação"
                   ></textarea>
@@ -63,7 +67,7 @@
                     <p>Selecione caso deseja fazer encaminhamento</p>
                     <select
                       v-model="atendimentoSelecionado.encaminhamento"
-                      class="form-select block cursor-pointer w-full mt-1 dark:bg-gray-600 form-tail text-gray-100"
+                      class="form-select block cursor-pointer w-full mt-1 bg-whitetheme-1 text-whitetheme-9 dark:bg-darktheme-7 form-tail"
                     >
                       <option value="" disabled>Selecione o encaminhamento</option>
                       <option>Advogado</option>

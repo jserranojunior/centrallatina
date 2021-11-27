@@ -24,13 +24,13 @@
 }
 
 .form-tail {
-  @apply appearance-none border border-gray-400 w-full py-1 px-4 text-gray-700 leading-tight bg-white text-sm;
+  @apply appearance-none border border-gray-400 w-full py-1 px-4 text-whitetheme-9 leading-tight bg-whitetheme-1 text-sm;
 }
 .form-tail:focus {
   @apply outline-none shadow;
 }
 .label-tail {
-  @apply text-gray-700 text-sm font-bold mb-1;
+  @apply text-whitetheme-9 text-sm font-bold mb-1;
 }
 
 .callout-warning-tail {
@@ -53,7 +53,7 @@
 }
 
 .btn-primary-tail {
-  @apply bg-central-1 text-white font-bold py-1 px-2 rounded cursor-pointer text-center;
+  @apply bg-whitetheme-3 text-white font-bold py-1 px-2 rounded cursor-pointer text-center;
 }
 
 .btn-primary-tail:hover {
@@ -92,25 +92,25 @@
 
 
 .table-tail {
-  @apply table-auto w-full;
+  @apply table-auto w-full text-left;
 }
 
 .table-tail > tbody > tr,
 .table-tail > thead > tr {
-  @apply border-b border-gray-100 my-1 p-1;
+  @apply border-b border-whitetheme-2;
 }
 
 .table-tail > tbody > tr > td,
 .table-tail > thead > tr > td {
-  @apply px-1;
+  @apply px-1 py-3;
 }
 
 .table-tail > tbody > tr:hover {
-  @apply bg-blue-200 cursor-pointer;
+  @apply bg-whitetheme-2 cursor-pointer;
 }
 
 .table-tail-adm > tbody > tr:hover {
-  @apply bg-gray-800 cursor-pointer;
+  @apply bg-whitetheme-2 cursor-pointer;
 }
 
 
@@ -174,32 +174,32 @@ s {
 }
 
 .nav-btn-exit {
-  @apply bg-red-800 text-white;
+  @apply bg-red-800 text-whitetheme-1;
 }
 .nav-btn-exit:hover {
-  @apply bg-red-700 text-white;
+  @apply bg-red-700 text-whitetheme-1;
 }
 .nav-btn-exit:focus {
-  @apply bg-red-700 text-white;
+  @apply bg-red-700 text-whitetheme-1;
 }
 
 
 .nav-btn-adm{
-  @apply bg-gray-800 text-white
+  @apply bg-whitetheme-1 text-whitetheme-9
 }
 .nav-btn-adm:hover {
-  @apply bg-gray-800 text-white;
+  @apply bg-whitetheme-2 text-whitetheme-9;
 }
 .nav-btn-adm:focus {
-  @apply bg-gray-500 text-white;
+  @apply bg-whitetheme-2 text-whitetheme-9;
 }
 
 .nav-disable {
-  @apply bg-gray-200 text-white;
+  @apply bg-whitetheme-1 text-whitetheme-9;
 }
 .nav-disable:hover {
-  @apply bg-gray-200 cursor-default
+  @apply bg-whitetheme-2 cursor-default
 }
 .nav-disable:focus {
-  @apply bg-gray-200 text-white;
+  @apply bg-whitetheme-2 text-whitetheme-9;
 }

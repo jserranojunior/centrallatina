@@ -4,8 +4,8 @@
       <span>Home</span>
     </router-link> -->
     <img
-      class="img-fluid align-middle mx-auto mb-2"
-      width="46"
+      class="img-fluid align-middle mx-auto mb-2 rounded-lg"
+      width="150"
       src="@/assets/img/logo_albank.jpeg"
       alt=""
     />

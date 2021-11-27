@@ -56,7 +56,9 @@ export const useAuthAdm = () => {
     state.authadm.data = "";
   }
   async function isLoggedAdm() {
-    if (localStorage.getItem("tokenadm") !== state.authadm.tokenadm) {
+    const tokenStorage = localStorage.getItem("tokenadm");
+
+    if (tokenStorage !== state.authadm.tokenadm) {
       let token: string;
       if (
         localStorage.getItem("tokenadm") != "null" ||
@@ -65,6 +67,8 @@ export const useAuthAdm = () => {
         localStorage.getItem("tokenadm") != undefined
       ) {
         token = String(localStorage.getItem("tokenadm"));
+        state.authadm.tokenadm = token;
+
         if (state.authadm.tokenadm) {
           state.logged = true;
         }

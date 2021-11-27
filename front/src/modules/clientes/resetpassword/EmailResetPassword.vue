@@ -39,7 +39,7 @@
             {{ reset.data }}
           </div>
         </div>
-        <div class="w-full text-center text-white">
+        <div class="w-full text-center text-whitetheme-9">
           <h3 class="text-xl my-7 font-bold">
             Já possui uma conta?
             <router-link to="/login">
@@ -50,7 +50,7 @@
         <div class="w-full sm:w-full md:w-1/3 lg:w-1/4 mx-auto px-6">
           <div class="flex flex-wrap row-space justify-center mt-2">
             <div class="w-auto text-center mr-8">
-              <div class="icon-social text-primary text-2xl text-white">
+              <div class="icon-social text-primary text-2xl text-whitetheme-9">
                 <a target="_blank" :href="linkWhatsApp">
                   <h5>
                     <i class="bg-white-social fab fa-whatsapp"></i>
@@ -59,7 +59,7 @@
               </div>
             </div>
             <div class="w-auto text-center mr-8">
-              <div class="icon-social text-primary text-2xl text-white">
+              <div class="icon-social text-primary text-2xl text-whitetheme-9">
                 <a target="_blank" :href="linkWhatsApp">
                   <h5>
                     <i class="bg-white-social fab fa-facebook-f"></i>
@@ -68,7 +68,7 @@
               </div>
             </div>
             <div class="w-auto text-center mr-8">
-              <div class="icon-social text-primary text-2xl text-white">
+              <div class="icon-social text-primary text-2xl text-whitetheme-9">
                 <a target="_blank" :href="linkWhatsApp">
                   <h5>
                     <i class="bg-white-social fas fa-map-marker-alt"></i>

@@ -11,13 +11,13 @@
           <div :class="'flex w-auto my-auto mx-auto max-w-6xl justify-center' + m">
             <div
               :class="
-                'flex flex-col justify-center border-0 rounded-lg shadow-lg bg-gray-600 outline-none focus:outline-none w-full' +
+                'flex flex-col justify-center border-0 rounded-lg shadow-lg bg-whitetheme-2 outline-none focus:outline-none w-full' +
                 w
               "
             >
               <div
                 :class="
-                  'flex justify-between border-b border-solid border-gray-300 rounded-t ' +
+                  'flex justify-between border-b border-solid border-whitetheme-2 rounded-t ' +
                   headerClass
                 "
               >
@@ -59,7 +59,7 @@
             </div>
           </div>
         </div>
-        <div class="opacity-25 fixed inset-0 z-40 bg-black"></div>
+        <div class="opacity-25 fixed inset-0 z-40 bg-whitetheme-1"></div>
       </div>
     </div>
   </div>

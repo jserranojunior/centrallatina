@@ -4,7 +4,7 @@
       <div class="ml-auto">
         <img width="100" src="@/assets/img/logo/logo.jpg" alt="" />
       </div>
-      <div class="text-white text-center align-middle mr-auto my-auto">
+      <div class="text-whitetheme-9 text-center align-middle mr-auto my-auto">
         <p class="pl-6 text-sm">
           <i class="far fa-clock text-central-2 ml-2"></i> SEG-SAB DAS 8:00 AS 18:00
           <i class="fas fa-map-marker-alt text-central-2 ml-2"></i> Coimbra,435-Brás

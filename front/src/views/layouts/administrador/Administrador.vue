@@ -4,11 +4,11 @@
       <div class="w-full">
         <div class="flex justify-between">
           <div>
-            <span class="text-white">
-              <STogglesidebar class="text-white align-middle"></STogglesidebar
+            <span class="text-whitetheme-1">
+              <STogglesidebar class="text-whitetheme-1 align-middle"></STogglesidebar
             ></span>
           </div>
-          <div><i class="far fa-bell text-white align-middle"></i></div>
+          <div><i class="far fa-bell text-whitetheme-1 align-middle"></i></div>
         </div>
       </div>
     </template>

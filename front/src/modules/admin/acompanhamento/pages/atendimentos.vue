@@ -1,11 +1,9 @@
 <template>
   <Administrador>
     <template #body>
-      <SCard class="text-gray-200 bg-gray-600">
+      <SCard class="text-whitetheme-9 bg-whitetheme-1 dark:bg-darktheme-7">
         <template #header
-          ><span class="font-bold text-center text-gray-300"
-            >ATENDIMENTOS AGUARDANDO</span
-          >
+          ><span class="font-bold text-center">ATENDIMENTOS - AGUARDANDO</span>
         </template>
         <template #body>
           <!-- <div class="float-right">
@@ -40,7 +38,7 @@
           </div> -->
           <div>
             <table class="table-tail table-tail-adm">
-              <thead class="text-left bg-gray-700">
+              <thead class="text-whitetheme-9 bg-whitetheme-1 dark:bg-darktheme-7">
                 <tr>
                   <th>#</th>
                   <th>Nome</th>

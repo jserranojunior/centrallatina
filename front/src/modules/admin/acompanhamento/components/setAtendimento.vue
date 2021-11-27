@@ -4,21 +4,19 @@
       <div class="my-2">
         <div class="flex flex-wrap justify-center pt-4">
           <div class="w-full sm:w-full md:w-1/2 lg:w-1/2 mx-auto px-6">
-            <SCard class="bg-gray-600">
+            <SCard class="text-whitetheme-9 bg-whitetheme-1 dark:bg-darktheme-7">
               <template #header>
-                <span class="text-white font-bold">
-                  Selecione o Atendimento
-                </span></template
+                <span class="font-bold"> Selecione o Atendimento </span></template
               >
               <template #body>
-                <div class="mt-2 dark:bg-gray-600 p-1">
-                  <p class="text-white pt-2 ml-2 dark:bg-gray-600 text-center">
+                <div class="mt-2 bg-whitetheme-1 dark:bg-darktheme-7 p-1">
+                  <p class="pt-2 ml-2 bg-whitetheme-1 dark:bg-darktheme-7 text-center">
                     {{ userSelected.name }}
                   </p>
 
                   <select
                     v-model="userSelected.atendimento.type"
-                    class="form-select block cursor-pointer w-full mt-1 dark:bg-gray-600 form-tail text-gray-100"
+                    class="form-select block cursor-pointer w-full mt-1 bg-whitetheme-1 dark:bg-darktheme-7 form-tail text-gray-100"
                   >
                     <option value="" disabled>Selecione o local</option>
                     <option>Advogado</option>
@@ -29,7 +27,7 @@
 
                   <textarea
                     v-model="userSelected.atendimento.observacao"
-                    class="form-textarea mt-1 block w-full dark:bg-gray-600 form-tail text-white"
+                    class="form-textarea mt-1 block w-full bg-whitetheme-1 dark:bg-darktheme-7 form-tail text-whitetheme-9"
                     rows="10"
                     placeholder="Observação"
                   ></textarea>

@@ -2,12 +2,7 @@
   <div class="flex flex-wrap justify-between">
     <div class="my-auto bg-blue-800 hover:bg-gray-800 rounded-full w-auto">
       <div class="p-4 cursor-pointer" @click="closeSidebar()">
-        <svg
-          viewBox="0 0 100 80"
-          width="18"
-          height="18"
-          class="fill-current text-gray-300"
-        >
+        <svg viewBox="0 0 100 80" width="18" height="18" class="fill-current">
           <rect width="100" height="20"></rect>
           <rect y="30" width="100" height="20"></rect>
           <rect y="60" width="100" height="20"></rect>
@@ -18,7 +13,9 @@
       <!-- <div class="flex max-w-screen px-2 mx-auto"> -->
       <div class="p-2 flex flex-wrap justify-between my-auto items-center mx-2">
         <div>
-          <a href="#" class="text-lg font-semibold uppercase text-white">Intellect</a>
+          <a href="#" class="text-lg font-semibold uppercase text-whitetheme-9"
+            >Central</a
+          >
         </div>
 
         <div class="">

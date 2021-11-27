@@ -55,9 +55,12 @@ export const useAtendimentos = () => {
       .then((res) => {
         if (res) {
           if (data.encaminhamento > "") {
+            data.type = data.encaminhamento;
             addAtendimento(data).then(() => {
               router.push({ name: "Atendimentos" });
             });
+          } else {
+            router.push({ name: "Atendimentos" });
           }
         }
       })
