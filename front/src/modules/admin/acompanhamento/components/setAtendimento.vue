@@ -16,7 +16,7 @@
 
                   <select
                     v-model="userSelected.atendimento.type"
-                    class="form-select block cursor-pointer w-full mt-1 bg-whitetheme-1 dark:bg-darktheme-7 form-tail text-gray-100"
+                    class="form-select block cursor-pointer w-full mt-1 bg-whitetheme-1 dark:bg-darktheme-7 form-tail text-whitetheme-9"
                   >
                     <option value="" disabled>Selecione o local</option>
                     <option>Advogado</option>

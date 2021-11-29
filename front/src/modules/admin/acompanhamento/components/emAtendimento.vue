@@ -58,7 +58,7 @@
 
                   <textarea
                     v-model="atendimentoSelecionado.observacao"
-                    class="form-textarea mt-1 block w-full bg-whitetheme-1 dark:bg-darktheme-7 form-tail text-whitetheme-9a"
+                    class="form-textarea mt-1 block w-full bg-whitetheme-1 dark:bg-darktheme-7 form-tail text-whitetheme-9"
                     rows="10"
                     placeholder="Observação"
                   ></textarea>
