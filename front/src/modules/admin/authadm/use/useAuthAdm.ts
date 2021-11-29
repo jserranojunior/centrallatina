@@ -96,7 +96,6 @@ export const useAuthAdm = () => {
       state.authadm.tokenadm == null ||
       state.authadm.tokenadm.length == 0
     ) {
-      state.logged = false;
       return false;
     } else if (state.authadm && state.authadm.tokenadm !== "") {
       return true;

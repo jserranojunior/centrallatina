@@ -3,11 +3,7 @@ import useHttpAtendimentos from "./useHttpAtendimentos";
 
 import { reactive, toRefs } from "vue";
 import router from "@/router/index";
-import {
-  dateUsToPtBr,
-  dateJstoUs,
-  getJsHour,
-} from "@/helpers/dates/helpersDates";
+import { dateJstoUs, getJsHour } from "@/helpers/dates/helpersDates";
 
 const HttpUsers = new useHttpUsers();
 const HttpAtendimentos = new useHttpAtendimentos();
@@ -48,6 +44,7 @@ export const useAtendimentos = () => {
       });
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   async function finishAtendimento(data: Record<string, any>) {
     data.status = 1;
 

@@ -114,6 +114,7 @@ export default {
     Administrador,
     Modal,
   },
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   setup() {
     const useAtendimentos = inject("atendimentos");
     const useModal = inject("modal");

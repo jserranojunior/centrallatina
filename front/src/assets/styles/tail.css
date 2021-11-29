@@ -164,7 +164,6 @@ s {
 
 .new-nav-btn{
   @apply px-1 py-2 text-xs rounded-lg   text-gray-400 font-bold;
-
 }
 .new-nav-btn:hover {
   @apply text-gray-400 bg-gray-200;
@@ -202,4 +201,7 @@ s {
 }
 .nav-disable:focus {
   @apply bg-whitetheme-2 text-whitetheme-9;
+}
+.teste{
+  @apply text-gray-300
 }
