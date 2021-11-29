@@ -80,6 +80,7 @@ export const useAuthAdm = () => {
       await setToken(token).then(() => {
         if (state.authadm.tokenadm == "") {
           state.authadm.erro = "Erro ao fazer login";
+          state.logged = false;
           return false;
         } else {
           return true;
@@ -96,6 +97,7 @@ export const useAuthAdm = () => {
       state.authadm.tokenadm == null ||
       state.authadm.tokenadm.length == 0
     ) {
+      state.logged = false;
       return false;
     } else if (state.authadm && state.authadm.tokenadm !== "") {
       return true;
@@ -108,6 +110,7 @@ export const useAuthAdm = () => {
       state.authadm.erro = "";
       return true;
     } else {
+      state.logged = false;
       return false;
     }
   }
