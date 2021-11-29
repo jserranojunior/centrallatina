@@ -9,7 +9,7 @@
                 <span class="font-bold"> Selecione o Atendimento </span></template
               >
               <template #body>
-                <div class="mt-2 bg-whitetheme-1 dark:bg-darktheme-7 p-1">
+                <div class="bg-whitetheme-1 dark:bg-darktheme-7 p-1">
                   <p class="pt-2 ml-2 bg-whitetheme-1 dark:bg-darktheme-7 text-center">
                     {{ userSelected.name }}
                   </p>

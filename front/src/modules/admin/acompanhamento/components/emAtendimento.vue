@@ -43,7 +43,7 @@
                 <span class="text-whitetheme-9 font-bold"> Atendimento </span></template
               >
               <template #body>
-                <div class="mt-2 dark:bg-darktheme-7 p-1">
+                <div class="dark:bg-darktheme-7 p-1">
                   <p
                     class="text-whitetheme-9 pt-2 ml-2 bg-whitetheme-1 dark:bg-darktheme-7 text-center"
                   >
