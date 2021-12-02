@@ -14,6 +14,7 @@ export const useAuthAdm = () => {
     loginInputs: { email: "", password: "" },
     logged: false,
     userID: null,
+    userAdminInfo: { email: null },
   });
   async function LoginAdm() {
     state.authadm.erro = "";
@@ -134,6 +135,48 @@ export const useAuthAdm = () => {
         console.log(err.response.data);
       });
   }
+
+  async function getAdminInfo() {
+    return await HttpAuth.getAdmin()
+      .then((res) => {
+        if (res) {
+          state.userAdminInfo = res.data.data;
+          return res.data.data;
+        }
+      })
+      .catch((err) => {
+        console.log("abaixo erro ao pegar ID usuario");
+        console.log(err.response.data);
+      });
+  }
+  function checkAcl(rota: string) {
+    if (state.userAdminInfo && state.userAdminInfo.email) {
+      if (
+        state.userAdminInfo.email == "alvitreempresa@gmail.com" ||
+        state.userAdminInfo.email == "admin@centrallatina.com.br" ||
+        state.userAdminInfo.email == "contato@oalbank.com.br"
+      ) {
+        return true;
+      } else if (rota == "/admin/users") {
+        return false;
+      }
+
+      if (
+        rota == "/admin/recepcao" &&
+        state.userAdminInfo.email == "recepcao@centrallatina.com.br"
+      ) {
+        return true;
+      } else if (
+        rota == "/admin/atendimentos" &&
+        state.userAdminInfo.email == "atendimento@centrallatina.com.br"
+      ) {
+        return true;
+      } else {
+        console.log(rota);
+        return false;
+      }
+    }
+  }
   return {
     ...toRefs(state),
     Logout,
@@ -141,5 +184,7 @@ export const useAuthAdm = () => {
     clearMessages,
     getAdminID,
     isLoggedAdm,
+    getAdminInfo,
+    checkAcl,
   };
 };

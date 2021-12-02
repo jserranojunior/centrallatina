@@ -18,6 +18,7 @@ import Atendimentos from "@/modules/admin/acompanhamento/pages/atendimentos.vue"
 import Recepcao from "@/modules/admin/acompanhamento/pages/recepcao.vue";
 import setAtendimento from "@/modules/admin/acompanhamento/components/setAtendimento.vue";
 import emAtendimento from "@/modules/admin/acompanhamento/components/emAtendimento.vue";
+import CadEmpresas from "@/modules/clientes/institucional/CadEmpresas.vue";
 
 import { adminAuthMiddleware } from "./middlewares/adminAuthMiddleware";
 const { authadmin } = adminAuthMiddleware();
@@ -81,6 +82,11 @@ const routes = [
     name: "EditUser",
     component: EditUser,
     beforeEnter: [authadmin],
+  },
+  {
+    path: "/empresas",
+    name: "CadEmpresas",
+    component: CadEmpresas,
   },
 ];
 

@@ -70,10 +70,18 @@
                       class="form-select block cursor-pointer w-full mt-1 bg-whitetheme-1 text-whitetheme-9 dark:bg-darktheme-7 form-tail"
                     >
                       <option value="" disabled>Selecione o encaminhamento</option>
-                      <option>Advogado</option>
+                      <option>Advocacia</option>
                       <option>Contabilidade</option>
-                      <option>Apoio</option>
-                      <option>Caixa</option>
+                      <option>Certificação digital</option>
+                      <option>Imobiliária</option>
+                      <option>Engenharia</option>
+                      <option>Arquitetura</option>
+                      <option>Oalbank</option>
+                      <option>Projetos</option>
+                      <option>Comunicação</option>
+                      <option>Despachante</option>
+                      <option>Serviços cartorário</option>
+                      <option>Medicina</option>
                     </select>
                   </div>
 

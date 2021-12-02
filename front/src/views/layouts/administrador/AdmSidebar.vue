@@ -9,28 +9,91 @@
       src="@/assets/img/logo_albank.jpeg"
       alt=""
     />
-
     <router-link v-if="!logged" to="/admin/login" class="nav-btn nav-btn-adm">
       <span>Login</span>
     </router-link>
     <router-link v-if="logged" to="/admin" class="nav-btn nav-btn-adm">
       <span>Home</span>
     </router-link>
-    <router-link v-if="logged" to="/admin/users" class="nav-btn nav-btn-adm">
+    <router-link
+      v-if="logged && checkAcl('/admin/users')"
+      to="/admin/users"
+      class="nav-btn nav-btn-adm"
+    >
       <span>Clientes</span>
     </router-link>
-    <router-link v-if="logged" to="/admin/recepcao" class="nav-btn nav-btn-adm">
+    <router-link
+      v-if="logged && checkAcl('/admin/recepcao')"
+      to="/admin/recepcao"
+      class="nav-btn nav-btn-adm"
+    >
       <span>Recepção</span>
     </router-link>
-    <router-link v-if="logged" to="/admin/atendimentos" class="nav-btn nav-btn-adm">
+    <router-link
+      v-if="logged && checkAcl('/admin/atendimentos')"
+      to="/admin/atendimentos"
+      class="nav-btn nav-btn-adm"
+    >
       <span>Advocacia</span>
     </router-link>
-    <router-link v-if="logged" to="/admin/atendimentos" class="nav-btn nav-btn-adm">
-      <span>Consultoria</span>
+    <router-link
+      v-if="logged && checkAcl('/admin/atendimentos')"
+      to="/admin/atendimentos"
+      class="nav-btn nav-btn-adm"
+    >
+      <span>Contabilidade </span>
     </router-link>
-    <router-link v-if="logged" to="/admin/atendimentos" class="nav-btn nav-btn-adm">
-      <span>Rádio</span>
+    <router-link
+      v-if="logged && checkAcl('/admin/atendimentos')"
+      to="/admin/atendimentos"
+      class="nav-btn nav-btn-adm"
+    >
+      <span>Certificação digital </span>
     </router-link>
+
+    <router-link
+      v-if="logged && checkAcl('/admin/atendimentos')"
+      to="/admin/atendimentos"
+      class="nav-btn nav-btn-adm"
+    >
+      <span>Imobiliária</span>
+    </router-link>
+    <router-link
+      v-if="logged && checkAcl('/admin/atendimentos')"
+      to="/admin/atendimentos"
+      class="nav-btn nav-btn-adm"
+    >
+      <span>Engenharia </span>
+    </router-link>
+    <router-link
+      v-if="logged && checkAcl('/admin/atendimentos')"
+      to="/admin/atendimentos"
+      class="nav-btn nav-btn-adm"
+    >
+      <span>Arquitetura </span>
+    </router-link>
+    <router-link
+      v-if="logged && checkAcl('/admin/atendimentos')"
+      to="/admin/atendimentos"
+      class="nav-btn nav-btn-adm"
+    >
+      <span>Oalbank</span>
+    </router-link>
+    <router-link
+      v-if="logged && checkAcl('/admin/atendimentos')"
+      to="/admin/atendimentos"
+      class="nav-btn nav-btn-adm"
+    >
+      <span>Projetos</span>
+    </router-link>
+    <router-link
+      v-if="logged && checkAcl('/admin/atendimentos')"
+      to="/admin/atendimentos"
+      class="nav-btn nav-btn-adm"
+    >
+      <span>Comunicação </span>
+    </router-link>
+
     <div v-if="logged" class="nav-btn nav-btn-exit cursor-pointer" @click="Logout()">
       <span>Sair</span>
     </div>
@@ -46,7 +109,15 @@ export default {
 
   setup() {
     const useAuthAdm = inject("authadm");
-    const { Logout, logged, isLoggedAdm, getAdminID } = useAuthAdm;
+    const {
+      Logout,
+      logged,
+      isLoggedAdm,
+      getAdminID,
+      userAdminInfo,
+      getAdminInfo,
+      checkAcl,
+    } = useAuthAdm;
     onMounted(async () => {
       await isLoggedAdm();
     });
@@ -56,9 +127,10 @@ export default {
 
     watch(logged, async () => {
       await getAdminID();
+      await getAdminInfo();
     });
 
-    return { ...state, Logout, logged };
+    return { ...state, Logout, logged, userAdminInfo, checkAcl };
   },
 };
 </script>

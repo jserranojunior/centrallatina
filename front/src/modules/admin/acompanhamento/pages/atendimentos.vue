@@ -72,10 +72,12 @@
   </Administrador>
 </template>
 <script>
-import { inject, onBeforeMount } from "vue";
+import { inject, onBeforeMount, watch } from "vue";
 import { dateUsToPtBr } from "@/helpers/dates/helpersDates";
 import Administrador from "@/views/layouts/administrador/Administrador.vue";
 import { limitarTexto } from "@/helpers/filters/filters";
+import { useRoute } from "vue-router";
+
 export default {
   components: {
     Administrador,
@@ -83,16 +85,39 @@ export default {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   setup() {
     const useAtendimentos = inject("atendimentos");
+    const useAuthAdm = inject("authadm");
+    // const route = useRoute();
+
     const {
       atendimentos,
       getAllAtendimentosPendente,
       getAtendimentoSelecionado,
     } = useAtendimentos;
 
+    const { checkAcl } = useAuthAdm;
+
     onBeforeMount(async () => {
       await getAllAtendimentosPendente();
     });
-    return { atendimentos, dateUsToPtBr, getAtendimentoSelecionado, limitarTexto };
+
+    //  watch(
+    //   () => route.name,
+    //   () => {
+    //       await redirect();
+    //   }
+    // );
+
+    // async function redirect() {
+    //   const acl = await checkAcl(route.name);
+    //   console.log(acl);
+    // }
+    return {
+      atendimentos,
+      dateUsToPtBr,
+      getAtendimentoSelecionado,
+      checkAcl,
+      limitarTexto,
+    };
   },
 };
 </script>

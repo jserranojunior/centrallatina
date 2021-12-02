@@ -19,12 +19,19 @@
                     class="form-select block cursor-pointer w-full mt-1 bg-whitetheme-1 dark:bg-darktheme-7 form-tail text-whitetheme-9"
                   >
                     <option value="" disabled>Selecione o local</option>
-                    <option>Advogado</option>
+                    <option>Advocacia</option>
                     <option>Contabilidade</option>
-                    <option>Apoio</option>
-                    <option>Caixa</option>
+                    <option>Certificação digital</option>
+                    <option>Imobiliária</option>
+                    <option>Engenharia</option>
+                    <option>Arquitetura</option>
+                    <option>Oalbank</option>
+                    <option>Projetos</option>
+                    <option>Comunicação</option>
+                    <option>Despachante</option>
+                    <option>Serviços cartorário</option>
+                    <option>Medicina</option>
                   </select>
-
                   <textarea
                     v-model="userSelected.atendimento.observacao"
                     class="form-textarea mt-1 block w-full bg-whitetheme-1 dark:bg-darktheme-7 form-tail text-whitetheme-9"
