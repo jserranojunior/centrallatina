@@ -58,10 +58,9 @@
                   <td>{{ atendimento.ID }}</td>
                   <td>{{ atendimento.user.name }}</td>
                   <td>{{ atendimento.type }}</td>
+                  <td>{{ limitarTexto(atendimento.observacao, 10) }}</td>
                   <td>{{ dateUsToPtBr(atendimento.data) }}</td>
                   <td>{{ atendimento.hora }}</td>
-
-                  <td>{{ limitarTexto(atendimento.observacao, 10) }}</td>
                 </tr>
               </tbody>
             </table>
