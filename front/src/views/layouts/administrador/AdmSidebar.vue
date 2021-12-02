@@ -93,6 +93,27 @@
     >
       <span>Comunicação </span>
     </router-link>
+    <router-link
+      v-if="logged && checkAcl('/admin/atendimentos')"
+      to="/admin/atendimentos"
+      class="nav-btn nav-btn-adm"
+    >
+      <span>Despachante</span>
+    </router-link>
+    <router-link
+      v-if="logged && checkAcl('/admin/atendimentos')"
+      to="/admin/atendimentos"
+      class="nav-btn nav-btn-adm"
+    >
+      <span>Serviços cartorário</span>
+    </router-link>
+    <router-link
+      v-if="logged && checkAcl('/admin/atendimentos')"
+      to="/admin/atendimentos"
+      class="nav-btn nav-btn-adm"
+    >
+      <span>Medicina</span>
+    </router-link>
 
     <div v-if="logged" class="nav-btn nav-btn-exit cursor-pointer" @click="Logout()">
       <span>Sair</span>
