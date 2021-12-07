@@ -202,6 +202,6 @@ s {
 .nav-disable:focus {
   @apply bg-whitetheme-2 text-whitetheme-9;
 }
-.teste{
+.test{
   @apply text-gray-300
 }
