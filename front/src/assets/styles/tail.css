@@ -19,8 +19,8 @@
   @apply py-2;
 } */
 
-.text{
-  @apply text-yellow-700
+.text {
+  @apply text-yellow-700;
 }
 
 .form-tail {
@@ -53,7 +53,7 @@
 }
 
 .btn-primary-tail {
-  @apply bg-whitetheme-3 text-white font-bold py-1 px-2 rounded cursor-pointer text-center;
+  @apply bg-whitetheme-2 text-white font-bold py-1 px-2 rounded cursor-pointer text-center;
 }
 
 .btn-primary-tail:hover {
@@ -89,8 +89,6 @@
   @apply bg-gray-700 text-white font-bold py-1 px-2 rounded cursor-pointer text-center;
 }
 
-
-
 .table-tail {
   @apply table-auto w-full text-left;
 }
@@ -106,13 +104,12 @@
 }
 
 .table-tail > tbody > tr:hover {
-  @apply bg-whitetheme-2 cursor-pointer;
+  @apply bg-gray-300  cursor-pointer;
 }
 
 .table-tail-adm > tbody > tr:hover {
-  @apply bg-whitetheme-2 cursor-pointer;
+  @apply bg-gray-300 cursor-pointer;
 }
-
 
 .table-border-r > thead > tr > th,
 .table-border-r > tbody > tr > td {
@@ -160,16 +157,14 @@ s {
   text-decoration: none;
 }
 
-
-
-.new-nav-btn{
+.new-nav-btn {
   @apply px-1 py-2 text-xs rounded-lg   text-gray-400 font-bold;
 }
 .new-nav-btn:hover {
   @apply text-gray-400 bg-gray-200;
 }
 .new-nav-btn:focus {
-  @apply bg-gray-600  
+  @apply bg-gray-600;
 }
 
 .nav-btn-exit {
@@ -182,26 +177,25 @@ s {
   @apply bg-red-700 text-whitetheme-1;
 }
 
-
-.nav-btn-adm{
-  @apply bg-whitetheme-1 text-whitetheme-9
+.nav-btn-adm {
+  @apply bg-whitetheme-1 text-whitetheme-9;
 }
 .nav-btn-adm:hover {
-  @apply bg-whitetheme-2 text-whitetheme-9;
+  @apply bg-whitetheme-2 text-white;
 }
 .nav-btn-adm:focus {
-  @apply bg-whitetheme-2 text-whitetheme-9;
+  @apply bg-whitetheme-2 text-white;
 }
 
 .nav-disable {
   @apply bg-whitetheme-1 text-whitetheme-9;
 }
 .nav-disable:hover {
-  @apply bg-whitetheme-2 cursor-default
+  @apply bg-whitetheme-2 text-white cursor-default;
 }
 .nav-disable:focus {
-  @apply bg-whitetheme-2 text-whitetheme-9;
+  @apply bg-whitetheme-2 text-white;
 }
-.test{
-  @apply text-gray-300
+.test {
+  @apply text-gray-300;
 }

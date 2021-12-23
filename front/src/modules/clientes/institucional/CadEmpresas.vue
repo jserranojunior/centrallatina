@@ -8,17 +8,17 @@
         <div class="flex w-full h-screen bg-white text-dark dark:bg-gray-700 dark:text-gray-100">
           <!-- sm:w-8/12 lg:w-10/12 lg:w-11/12 xl:w-11/12  -->
           <div
-            class="w-full z-0 p-1 absolute md:static text-whitetheme-9 bg-whitetheme-2 dark:bg-darktheme-7 dark:text-darktheme-1 md:px-52"
+            class="w-full z-0 p-1 absolute md:static text-whitetheme-9 bg-white dark:bg-darktheme-7 dark:text-darktheme-1 md:px-52"
           >
             <SCard>
               <template #header>
-                <span class="text-whitetheme-3 font-bold text-sm">CADASTRO</span>
+                <span class="text-whitetheme-2 font-bold text-sm">CADASTRO</span>
               </template>
               <template #body>
-                <div class="text-whitetheme-3 font-bold flex text-center justify-center">
+                <div class="text-whitetheme-2 font-bold flex text-center justify-center">
                   <SBtn
                     value="<i class='fas fa-plus-circle mx-1'></i> NOVO CADASTRO"
-                    class="bg-whitetheme-3 hover:bg-blue-900 w-1/4 mr-1 text-xs"
+                    class="bg-whitetheme-2 hover:bg-blue-900 w-1/4 mr-1 text-xs"
                   ></SBtn>
                   <SBtn
                     value="<i class='far fa-file-excel mx-1'> EXPORTAR PARA EXCEL"
@@ -30,10 +30,10 @@
 
             <SCard class="mt-4">
               <template #header>
-                <span class="text-whitetheme-3 font-bold text-sm">FICHA DE CADASTRO</span>
+                <span class="text-whitetheme-2 font-bold text-sm">FICHA DE CADASTRO</span>
               </template>
               <template #body>
-                <div class="text-whitetheme-3 font-bold flex flex-wrap py-1">
+                <div class="text-whitetheme-2 font-bold flex flex-wrap py-1">
                   <div class="w-full lg:w-1/2 px-1">
                     <label class="label-tail text-gray-500 m-0 text-xs">Nome Completo</label>
 
@@ -47,7 +47,7 @@
                     <SInputT value></SInputT>
                   </div>
                 </div>
-                <div class="text-whitetheme-3 font-bold flex flex-wrap py-2">
+                <div class="text-whitetheme-2 font-bold flex flex-wrap py-2">
                   <div class="w-full lg:w-1/4 px-1">
                     <label class="label-tail text-gray-500 m-0 text-xs">Qual país nasceu?</label>
 
@@ -69,7 +69,7 @@
                     <SInputT value placeholder="00/00/0000"></SInputT>
                   </div>
                 </div>
-                <div class="text-whitetheme-3 font-bold flex flex-wrap py-1">
+                <div class="text-whitetheme-2 font-bold flex flex-wrap py-1">
                   <div class="w-full lg:w-1/4 px-1">
                     <label class="label-tail text-gray-500 m-0 text-xs">CPF</label>
 
@@ -93,7 +93,7 @@
                     <SInputT value placeholder></SInputT>
                   </div>
                 </div>
-                <div class="text-whitetheme-3 font-bold flex flex-wrap py-1">
+                <div class="text-whitetheme-2 font-bold flex flex-wrap py-1">
                   <div class="w-full lg:w-1/4 px-1">
                     <label class="label-tail text-gray-500 m-0 text-xs">CEP</label>
                     <SInputT value placeholder="00000-000"></SInputT>
@@ -109,7 +109,7 @@
                     <SInputN value placeholder></SInputN>
                   </div>
                 </div>
-                <div class="text-whitetheme-3 font-bold flex flex-wrap py-1">
+                <div class="text-whitetheme-2 font-bold flex flex-wrap py-1">
                   <div class="w-full lg:w-1/4 px-1">
                     <label class="label-tail text-gray-500 m-0 text-xs">Bairro</label>
 
@@ -131,7 +131,7 @@
                     <SInputT value placeholder></SInputT>
                   </div>
                 </div>
-                <div class="text-whitetheme-3 font-bold flex flex-wrap py-1">
+                <div class="text-whitetheme-2 font-bold flex flex-wrap py-1">
                   <div class="w-full lg:w-1/4 px-1">
                     <label class="label-tail text-gray-500 m-0 text-xs">O imóvel onde mora é:</label>
 
@@ -155,7 +155,7 @@
                     <SInputN value placeholder></SInputN>
                   </div>
                 </div>
-                <div class="text-whitetheme-3 font-bold flex flex-wrap py-1">
+                <div class="text-whitetheme-2 font-bold flex flex-wrap py-1">
                   <div class="w-full lg:w-1/3 px-1">
                     <label class="label-tail text-gray-500 m-0 text-xs">E-mail</label>
 

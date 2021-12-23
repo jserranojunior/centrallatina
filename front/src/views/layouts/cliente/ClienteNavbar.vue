@@ -15,9 +15,9 @@
     </div>
 
     <div
-      class="flex flex-wrap justify-between items-center mx-2 my-1 border-gray-800 border-t border-b"
+      class="flex flex-wrap justify-between items-center border-gray-800 border-t border-b bg-whitetheme"
     >
-      <div class="w-full mx-auto bg-white">
+      <div class="w-full mx-auto bg-white mx-2 my-1">
         <nav
           :class="
             'flex flex-wrap justify-between    mx-auto my-auto ' +
@@ -41,7 +41,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { useLayouts } from "../use";
 import { inject } from "vue";
 

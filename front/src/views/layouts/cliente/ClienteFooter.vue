@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex bg-central-1 p-5">
+    <div class="flex bg-central-1 p-5 border-t border-gray-700">
       <div class="ml-auto">
         <img width="50" src="@/assets/img/logo/logo.jpg" alt />
       </div>

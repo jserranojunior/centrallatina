@@ -8,13 +8,13 @@ module.exports = {
     colors: {
       central: {
         1: "#0b4177",
-        2: "#f8981d",
+        2: "#F7C207",
         3: "#fdf100",
       },
       darktheme: {
         1: "#f8f9f8",
-        2: "#edf1f3",
-        3: "#d7dfe4",
+        2: "#0B4177",
+        3: "#F7C207",
         4: "#aebdc5",
         5: "#7c969d",
         6: "#5f7479",
@@ -25,8 +25,8 @@ module.exports = {
       },
       whitetheme: {
         1: "#ffffff",
-        2: "#ebf1f5",
-        3: "#018abf",
+        2: "#0B4177",
+        3: "#fdf100",
         4: "#998eab",
         5: "#7b6b8a",
         6: "#634f6b",
