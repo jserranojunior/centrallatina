@@ -6,7 +6,8 @@ import { useUsers } from "@/modules/admin/user/use/useUsers";
 
 import { useInstitucional } from "@/modules/clientes/institucional/use/useInstitucional";
 // import { useFinancial } from "@/modules/financeiro/use/useFinancial";
-import useApiConnect from "@/modules/clientes/api/use/useApiConnect";
+import useApiConnect from "@/modules/admin/apiadm/use/useApiConnect";
+
 import { useAuthAdm } from "@/modules/admin/authadm/use/useAuthAdm";
 
 import { useAtendimentos } from "@/modules/admin/acompanhamento/use/useAtendimentos";

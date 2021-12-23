@@ -1,5 +1,4 @@
 import useHttpAuth from "./useHttpAuth";
-import { datePtBrToUs, dateUsToPtBr } from "@/helpers/dates/helpersDates";
 
 import { reactive, toRefs } from "vue";
 // import { useRouter } from 'vue-router'
@@ -18,9 +17,7 @@ export const useAuth = () => {
       type: "",
       email: "",
       password: "",
-      cpf: "",
       birth_date: "",
-      dtBirth: "",
     },
 
     admin: false,
@@ -78,15 +75,8 @@ export const useAuth = () => {
     if (
       state.registerInputs &&
       state.registerInputs.email &&
-      state.registerInputs.password &&
-      state.registerInputs.cpf
+      state.registerInputs.password
     ) {
-      if (state.registerInputs.dtBirth) {
-        state.registerInputs.birth_date = datePtBrToUs(
-          state.registerInputs.dtBirth
-        );
-      }
-
       return await HttpAuth.register(state.registerInputs)
         .then((res) => {
           if (res && res.data) {
@@ -96,8 +86,11 @@ export const useAuth = () => {
         })
         .catch((err) => {
           console.log("abaixo erro 2");
-          console.log(err.response.data.erro);
-          state.auth.erro = err.response.data.erro;
+          console.log(err.response.data);
+
+          if (err.response.data.erro) {
+            state.auth.erro = err.response.data.erro;
+          }
         });
     } else {
       state.auth.erro = "Campos Vazios";

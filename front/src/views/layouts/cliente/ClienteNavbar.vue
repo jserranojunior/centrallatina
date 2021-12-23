@@ -2,13 +2,14 @@
   <div>
     <div class="flex flex-wrap bg-central-1 p-5">
       <div class="ml-auto">
-        <img width="100" src="@/assets/img/logo/logo.jpg" alt="" />
+        <img width="100" src="@/assets/img/logo/logo.jpg" alt />
       </div>
-      <div class="text-whitetheme-9 text-center align-middle mr-auto my-auto">
+      <div class="text-whitetheme-1 text-center align-middle mr-auto my-auto">
         <p class="pl-6 text-sm">
           <i class="far fa-clock text-central-2 ml-2"></i> SEG-SAB DAS 8:00 AS 18:00
           <i class="fas fa-map-marker-alt text-central-2 ml-2"></i> Coimbra,435-Brás
-          Cep:03052-030 <i class="fab fa-whatsapp text-central-2 ml-2"></i> (11) 984526015
+          Cep:03052-030
+          <i class="fab fa-whatsapp text-central-2 ml-2"></i> (11) 984526015
         </p>
       </div>
     </div>
@@ -23,17 +24,14 @@
             { flex: open, hidden: !open }
           "
         >
-          <a href="#" class="new-nav-btn"> Albank </a>
-          <a href="#" class="new-nav-btn"> Contabilidade </a>
-          <a href="#" class="new-nav-btn"> Advocacia </a>
-          <a href="#" class="new-nav-btn"> Engenharia </a>
-          <a href="#" class="new-nav-btn"> Certificado Digital </a>
-          <a href="#" class="new-nav-btn"> Cooperativa </a>
-          <a href="#" class="new-nav-btn"> Rádio/TV </a>
-          <a href="#" class="new-nav-btn"> Despachante </a>
-          <a href="#" class="new-nav-btn"> Corporativa </a>
-          <a href="#" class="new-nav-btn"> Projetos </a>
-          <a href="#" class="new-nav-btn"> Fale com o Gestor </a>
+          <a href="/" class="new-nav-btn">Home</a>
+          <a href="#" class="new-nav-btn">Advocacia</a>
+          <a href="#" class="new-nav-btn">Contabilidade</a>
+          <a href="#" class="new-nav-btn">Certificação Digital</a>
+          <a href="#" class="new-nav-btn">Bancarização</a>
+          <a href="http://webmail.centrallatina.com/" class="new-nav-btn">Webmail</a>
+          <router-link class="new-nav-btn" to="/cadastro">Cadastro</router-link>
+          <a href="#" class="new-nav-btn">Fale conosco</a>
         </nav>
       </div>
 

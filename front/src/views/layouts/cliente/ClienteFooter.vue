@@ -2,9 +2,9 @@
   <div>
     <div class="flex bg-central-1 p-5">
       <div class="ml-auto">
-        <img width="50" src="@/assets/img/logo/logo.jpg" alt="" />
+        <img width="50" src="@/assets/img/logo/logo.jpg" alt />
       </div>
-      <div class="text-whitetheme-9 text-center align-middle mr-auto my-auto text-sm">
+      <div class="text-whitetheme-1 text-center align-middle mr-auto my-auto text-sm">
         <p class="pl-6">Central Latina ®| 2021 - Direitos reservados</p>
       </div>
     </div>

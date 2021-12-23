@@ -2,12 +2,12 @@
   <div class="w-full">
     <!-- <router-link to="/" class="nav-btn">
       <span>Home</span>
-    </router-link> -->
+    </router-link>-->
     <img
       class="img-fluid align-middle mx-auto mb-2 rounded-lg"
       width="150"
       src="@/assets/img/logo_albank.jpeg"
-      alt=""
+      alt
     />
     <router-link v-if="!logged" to="/admin/login" class="nav-btn nav-btn-adm">
       <span>Login</span>
@@ -15,6 +15,7 @@
     <router-link v-if="logged" to="/admin" class="nav-btn nav-btn-adm">
       <span>Home</span>
     </router-link>
+    <router-link class="nav-btn nav-btn-adm" to="/empresas">Empresas</router-link>
     <router-link
       v-if="logged && checkAcl('/admin/users')"
       to="/admin/users"
@@ -41,14 +42,14 @@
       to="/admin/atendimentos"
       class="nav-btn nav-btn-adm"
     >
-      <span>Contabilidade </span>
+      <span>Contabilidade</span>
     </router-link>
     <router-link
       v-if="logged && checkAcl('/admin/atendimentos')"
       to="/admin/atendimentos"
       class="nav-btn nav-btn-adm"
     >
-      <span>Certificação digital </span>
+      <span>Certificação digital</span>
     </router-link>
 
     <router-link
@@ -63,14 +64,14 @@
       to="/admin/atendimentos"
       class="nav-btn nav-btn-adm"
     >
-      <span>Engenharia </span>
+      <span>Engenharia</span>
     </router-link>
     <router-link
       v-if="logged && checkAcl('/admin/atendimentos')"
       to="/admin/atendimentos"
       class="nav-btn nav-btn-adm"
     >
-      <span>Arquitetura </span>
+      <span>Arquitetura</span>
     </router-link>
     <router-link
       v-if="logged && checkAcl('/admin/atendimentos')"
@@ -91,7 +92,7 @@
       to="/admin/atendimentos"
       class="nav-btn nav-btn-adm"
     >
-      <span>Comunicação </span>
+      <span>Comunicação</span>
     </router-link>
     <router-link
       v-if="logged && checkAcl('/admin/atendimentos')"
