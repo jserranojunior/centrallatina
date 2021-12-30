@@ -9,7 +9,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "alvitre-obelisk": "^1.0.1",
     "axios": "^0.21.1",
+    "daisyui": "^1.20.1",
     "dayjs": "^1.10.4",
     "maska": "^1.4.5",
     "primevue": "^3.7.1",
