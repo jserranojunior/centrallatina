@@ -13,6 +13,7 @@ func MigrateDB() {
 	db.AutoMigrate(&User{})
 	db.AutoMigrate(&Admin{})
 	db.AutoMigrate(&Service{})
+	db.AutoMigrate(&AreaService{})
 
 	// db.AutoMigrate(&ContasAPagars{})
 	// db.AutoMigrate(&ValoresContasAPagars{})

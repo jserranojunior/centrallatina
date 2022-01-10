@@ -2,8 +2,10 @@
   <Cliente>
     <template #cliente>
       <div class="flex flex-wrap justify-center bg-central-2">
-        <div class="w-full my-12">
-          <img class="mx-auto" src="@/assets/img/banner/banner-home.jpeg" alt="" />
+        <div class="w-full my-8">
+          <a href="http://conta.oalbank.com/">
+            <img class="mx-auto" src="@/assets/img/banner/banner-home.jpeg" alt />
+          </a>
         </div>
       </div>
     </template>

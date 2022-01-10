@@ -35,6 +35,11 @@ func RegisterRoutes() {
 	router.Put("/resetpassword/:token", middlewares.CORSMiddleware, handlers.ResetPassword)
 	// services
 	router.Post("/services", middlewares.CORSMiddleware, handlers.ServiceCreate)
+	router.Post("/areaservices", middlewares.CORSMiddleware, handlers.AreaServiceCreate)
+	router.Put("/areaservices/:id", middlewares.CORSMiddleware, middlewares.VerifyJwt, handlers.AreaServiceUpdate)
+
+	router.Get("/servicewithlastarea/:id", middlewares.CORSMiddleware, middlewares.VerifyJwt, handlers.GetServicesWithOpenArea)
+
 	router.Get("/admin/servicestype/:type", middlewares.CORSMiddleware, middlewares.VerifyJwt, handlers.GetAllServicesType)
 	router.Get("/admin/servicespendente", middlewares.CORSMiddleware, middlewares.VerifyJwt, handlers.GetAllServicesPendente)
 

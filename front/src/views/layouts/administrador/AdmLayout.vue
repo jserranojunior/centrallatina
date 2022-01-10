@@ -9,7 +9,7 @@
     <div class="flex w-full h-screen bg-white text-dark dark:bg-gray-700 dark:text-gray-100">
       <div
         v-if="$slots.sidebar"
-        class="sidebar w-64 z-10 absolute md:static p-1 no-print text-whitetheme-9 bg-whitetheme-1 dark:bg-darktheme-8 dark:text-darktheme-1 border-r border-gray-200"
+        class="sidebar w-64 z-10 absolute md:static py-1 no-print text-whitetheme-9 bg-whitetheme-1 dark:bg-darktheme-8 dark:text-darktheme-1 border-r border-gray-200"
       >
         <div class="flex flex-wrap items-center p-1 text-sm">
           <slot name="sidebar"></slot>

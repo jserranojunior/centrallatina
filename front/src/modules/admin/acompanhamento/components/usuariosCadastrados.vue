@@ -1,9 +1,7 @@
 <template>
-  <SCard class="text-whitetheme-9 bg-whitetheme-1 dark:bg-darktheme-7">
-    <template #header>
-      <span class="font-bold text-center">USÁRIOS CADASTRADOS</span>
-    </template>
-    <template #body>
+  <div class="card card-bordered bg-white">
+    <div class="card-body">
+      <h2 class="card-title text-sm">USÁRIOS CADASTRADOS</h2>
       <div class="justify-end float-right">
         <div class="py-2 relative mx-auto text-gray-600">
           <input
@@ -46,9 +44,9 @@
               <th>E-mail</th>
             </tr>
           </thead>
-
+          <!-- @click="selectUserAtendimento(user.ID)" -->
           <tbody class="text-left">
-            <tr v-for="user in users" :key="user.ID" @click="selectUserAtendimento(user.ID)">
+            <tr v-for="user in users" :key="user.ID">
               <td>{{ user.ID }}</td>
               <td>{{ user.name }}</td>
               <td>{{ user.cellphone }}</td>
@@ -59,8 +57,8 @@
           </tbody>
         </table>
       </div>
-    </template>
-  </SCard>
+    </div>
+  </div>
 </template>
 <script lang="ts">
 import { inject, onBeforeMount } from "vue";
@@ -75,12 +73,12 @@ export default {
   setup() {
     const useUsers = inject("users");
     const useAtendimentos = inject("atendimentos");
-    const { selectUserAtendimento } = useAtendimentos;
+    // const { selectUserAtendimento } = useAtendimentos;
     const { users, getAllUsers } = useUsers;
     onBeforeMount(async () => {
       await getAllUsers();
     });
-    return { users, dateUsToPtBr, selectUserAtendimento };
+    return { users, dateUsToPtBr };
   },
 };
 </script>

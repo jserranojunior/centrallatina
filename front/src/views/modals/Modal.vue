@@ -11,13 +11,13 @@
           <div :class="'flex w-auto my-auto mx-auto max-w-6xl justify-center' + m">
             <div
               :class="
-                'flex flex-col justify-center border-0 rounded-lg shadow-lg bg-whitetheme-2 outline-none focus:outline-none w-full' +
+                'flex flex-col justify-center border-0 rounded-lg shadow-lg bg-gray-100 outline-none focus:outline-none w-full' +
                 w
               "
             >
               <div
                 :class="
-                  'flex justify-between border-b border-solid border-whitetheme-2 rounded-t ' +
+                  'flex justify-between border-b border-solid border-gray-100 rounded-t ' +
                   headerClass
                 "
               >
@@ -27,10 +27,7 @@
                   </h3>
                 </div>
                 <div>
-                  <div
-                    class="cursor-pointer"
-                    @click="updateModal({ name: nome, show: false })"
-                  >
+                  <div class="cursor-pointer" @click="updateModal({ name: nome, show: false })">
                     <i
                       class="fa fa-times-circle text-red-500 hover:text-red-600 transition duration-150"
                     ></i>
@@ -54,7 +51,7 @@
                     type="button"
                     style="transition: all .15s ease"
                     v-on:click="togleShowModal(nome)"
-                  >Save Changes</button>-->
+                >Save Changes</button>-->
               </div>
             </div>
           </div>

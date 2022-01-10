@@ -7,122 +7,71 @@
       class="img-fluid align-middle mx-auto mb-2 rounded-lg"
       width="150"
       src="@/assets/img/logo_albank.jpeg"
-      alt
     />
-    <router-link v-if="!logged" to="/admin/login" class="nav-btn nav-btn-adm">
-      <span>Login</span>
-    </router-link>
-    <router-link v-if="logged" to="/admin" class="nav-btn nav-btn-adm">
-      <span>Home</span>
-    </router-link>
-    <router-link class="nav-btn nav-btn-adm" to="/empresas">Empresas</router-link>
-    <router-link
-      v-if="logged && checkAcl('/admin/users')"
-      to="/admin/users"
-      class="nav-btn nav-btn-adm"
-    >
-      <span>Clientes</span>
-    </router-link>
-    <router-link
-      v-if="logged && checkAcl('/admin/recepcao')"
-      to="/admin/recepcao"
-      class="nav-btn nav-btn-adm"
-    >
-      <span>Recepção</span>
-    </router-link>
-    <router-link
-      v-if="logged && checkAcl('/admin/atendimentos')"
-      to="/admin/atendimentos"
-      class="nav-btn nav-btn-adm"
-    >
-      <span>Advocacia</span>
-    </router-link>
-    <router-link
-      v-if="logged && checkAcl('/admin/atendimentos')"
-      to="/admin/atendimentos"
-      class="nav-btn nav-btn-adm"
-    >
-      <span>Contabilidade</span>
-    </router-link>
-    <router-link
-      v-if="logged && checkAcl('/admin/atendimentos')"
-      to="/admin/atendimentos"
-      class="nav-btn nav-btn-adm"
-    >
-      <span>Certificação digital</span>
-    </router-link>
-
-    <router-link
-      v-if="logged && checkAcl('/admin/atendimentos')"
-      to="/admin/atendimentos"
-      class="nav-btn nav-btn-adm"
-    >
-      <span>Imobiliária</span>
-    </router-link>
-    <router-link
-      v-if="logged && checkAcl('/admin/atendimentos')"
-      to="/admin/atendimentos"
-      class="nav-btn nav-btn-adm"
-    >
-      <span>Engenharia</span>
-    </router-link>
-    <router-link
-      v-if="logged && checkAcl('/admin/atendimentos')"
-      to="/admin/atendimentos"
-      class="nav-btn nav-btn-adm"
-    >
-      <span>Arquitetura</span>
-    </router-link>
-    <router-link
-      v-if="logged && checkAcl('/admin/atendimentos')"
-      to="/admin/atendimentos"
-      class="nav-btn nav-btn-adm"
-    >
-      <span>Oalbank</span>
-    </router-link>
-    <router-link
-      v-if="logged && checkAcl('/admin/atendimentos')"
-      to="/admin/atendimentos"
-      class="nav-btn nav-btn-adm"
-    >
-      <span>Projetos</span>
-    </router-link>
-    <router-link
-      v-if="logged && checkAcl('/admin/atendimentos')"
-      to="/admin/atendimentos"
-      class="nav-btn nav-btn-adm"
-    >
-      <span>Comunicação</span>
-    </router-link>
-    <router-link
-      v-if="logged && checkAcl('/admin/atendimentos')"
-      to="/admin/atendimentos"
-      class="nav-btn nav-btn-adm"
-    >
-      <span>Despachante</span>
-    </router-link>
-    <router-link
-      v-if="logged && checkAcl('/admin/atendimentos')"
-      to="/admin/atendimentos"
-      class="nav-btn nav-btn-adm"
-    >
-      <span>Serviços cartorário</span>
-    </router-link>
-    <router-link
-      v-if="logged && checkAcl('/admin/atendimentos')"
-      to="/admin/atendimentos"
-      class="nav-btn nav-btn-adm"
-    >
-      <span>Medicina</span>
-    </router-link>
-
-    <div v-if="logged" class="nav-btn nav-btn-exit cursor-pointer" @click="Logout()">
-      <span>Sair</span>
+    <div class="py-4 artboard artboard-demo">
+      <ul class="menu rounded-box w-full">
+        <li class="menu-title">
+          <span>Menu</span>
+        </li>
+        <li>
+          <router-link v-if="logged" to="/admin" class="hover:bg-whitetheme-2 hover:text-white">
+            <span>Home</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            v-if="!logged"
+            to="/admin/login"
+            class="hover:bg-whitetheme-2 hover:text-white"
+          >
+            <span>Login</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            v-if="logged && checkAcl('/admin/recepcao')"
+            to="/admin/recepcao"
+            class="hover:bg-whitetheme-2 hover:text-white"
+          >
+            <span>Iniciar Atendimento</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            v-if="logged && checkAcl('/admin/atendimentos')"
+            to="/admin/atendimentos"
+            class="hover:bg-whitetheme-2 hover:text-white"
+          >
+            <span>Esperando Atendimento</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            v-if="logged && checkAcl('/admin/users')"
+            to="/admin/users"
+            class="hover:bg-whitetheme-2 hover:text-white"
+          >
+            <span>Clientes</span>
+          </router-link>
+        </li>
+        <!-- <li>
+          <router-link
+            v-if="logged && checkAcl('/empresas')"
+            to="/empresas"
+            class="hover:bg-whitetheme-2 hover:text-white"
+          >Empresas</router-link>
+        </li>-->
+        <li v-if="logged" @click="Logout()">
+          <a href="#" class="hover:bg-red-900 hover:text-white">
+            <span>Sair</span>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { reactive, inject, onMounted, watch } from "vue";
 export default {
   name: "Sidebar",

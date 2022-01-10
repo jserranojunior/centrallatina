@@ -1,5 +1,23 @@
 <template>
   <div>
+    <div id="my-modal" class="modal">
+      <div class="modal-box">
+        <div class="text-center align-middle mr-auto my-auto">
+          <p class="pl-6 text-sm">
+            <i class="far fa-clock text-central-2 ml-2"></i> SEG-SAB DAS 8:00 AS 18:00
+            <i class="fas fa-map-marker-alt text-central-2 ml-2"></i> Coimbra,435-Brás
+            Cep:03052-030
+            <i
+              class="fab fa-whatsapp text-central-2 ml-2"
+            ></i> (11) 984526015
+          </p>
+        </div>
+        <div class="modal-action">
+          <a @click="closeModalInfo()" class="btn btn-sm">Fechar</a>
+        </div>
+      </div>
+    </div>
+
     <div class="flex flex-wrap bg-central-1 p-5">
       <div class="ml-auto">
         <img width="100" src="@/assets/img/logo/logo.jpg" alt />
@@ -25,13 +43,13 @@
           "
         >
           <a href="/" class="new-nav-btn">Home</a>
-          <a href="#" class="new-nav-btn">Advocacia</a>
-          <a href="#" class="new-nav-btn">Contabilidade</a>
-          <a href="#" class="new-nav-btn">Certificação Digital</a>
-          <a href="#" class="new-nav-btn">Bancarização</a>
+          <a href="#" class="new-nav-btn" @click="openModalInfo()">Advocacia</a>
+          <a href="#" class="new-nav-btn" @click="openModalInfo()">Contabilidade</a>
+          <a href="#" class="new-nav-btn" @click="openModalInfo()">Certificação Digital</a>
+          <a href="#" class="new-nav-btn" @click="openModalInfo()">Bancarização</a>
           <a href="http://webmail.centrallatina.com/" class="new-nav-btn">Webmail</a>
           <router-link class="new-nav-btn" to="/cadastro">Cadastro</router-link>
-          <a href="#" class="new-nav-btn">Fale conosco</a>
+          <a href="#" class="new-nav-btn" @click="openModalInfo()">Fale conosco</a>
         </nav>
       </div>
 
@@ -54,7 +72,16 @@ export default {
 
     const { Logout, auth, fields } = useAuth;
 
-    return { Logout, auth, closeSidebar, open, fields };
+    function openModalInfo() {
+      const modal: any = document.getElementById("my-modal")
+      modal.classList.add("modal-open")
+    }
+    function closeModalInfo() {
+      const modal: any = document.getElementById("my-modal")
+      modal.classList.remove("modal-open")
+    }
+
+    return { Logout, auth, closeSidebar, open, fields, openModalInfo, closeModalInfo };
   },
 };
 </script>

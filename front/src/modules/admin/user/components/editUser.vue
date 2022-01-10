@@ -4,11 +4,9 @@
       <div class="my-2">
         <div class="flex flex-wrap justify-center pt-4">
           <div class="w-full sm:w-full md:w-1/2 lg:w-1/2 mx-auto px-6">
-            <SCard class="text-whitetheme-9 bg-whitetheme-1 dark:bg-darktheme-7">
-              <template #header>
-                <span class="text-black font-bold"> Editando </span></template
-              >
-              <template #body>
+            <div class="card card-bordered bg-white">
+              <div class="card-body">
+                <h2 class="card-title text-sm">Editando</h2>
                 <div class="mt-2">
                   <input
                     v-model="updateInputs.name"
@@ -134,14 +132,12 @@
                       <div
                         class="btn-primary-tail mt-4"
                         @click="updateUser(updateInputs, updateInputs.dtBirth)"
-                      >
-                        Salvar
-                      </div>
+                      >Salvar</div>
                     </div>
                   </div>
                 </div>
-              </template>
-            </SCard>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -149,7 +145,7 @@
   </Administrador>
 </template>
 
-<script>
+<script lang="ts">
 import { inject } from "vue";
 import Administrador from "@/views/layouts/administrador/Administrador.vue";
 

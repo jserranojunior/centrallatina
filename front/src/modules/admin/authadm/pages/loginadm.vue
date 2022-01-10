@@ -3,54 +3,42 @@
     <template #body>
       <div class="flex flex-wrap justify-center pt-4">
         <div class="w-full sm:w-full md:w-1/2 lg:w-1/3 mx-auto">
-          <SCard class="text-whitetheme-9 bg-whitetheme-1 dark:bg-darktheme-7 p-10">
-            <template #header>
-              <div class="flex flex-wrap margin-bottom-4 margin-topo justify-center">
-                <div class="w-auto text-center">
-                  <img
-                    class="img-fluid"
-                    width="150"
-                    src="@/assets/img/logo_albank.jpeg"
-                    alt=""
-                  />
-                </div>
+          <div class="card shadow bg-white">
+            <div class="card-body flex">
+              <div class="w-auto mx-auto text-center">
+                <!-- <img class="img-fluid" width="150" src="@/assets/img/logo_albank.jpeg" alt /> -->
               </div>
-              <div class="text-whitetheme-9 text-center">
-                <div class="font-bold text-2xl mt-6">Login</div>
-                <div class="mt-2">
-                  <form action="">
-                    <SInputT
-                      v-model="loginInputs.email"
-                      class="mt-2 form-tail"
-                      placeholder="Digite seu e-mail"
-                    ></SInputT>
-                    <SInputP
-                      v-model="loginInputs.password"
-                      class="mt-2 form-tail"
-                      placeholder="Digite sua senha"
-                    ></SInputP>
-                  </form>
+              <h2 class="card-title">Login</h2>
+              <div class="mt-2">
+                <form action>
+                  <input
+                    type="email"
+                    v-model="loginInputs.email"
+                    placeholder="Digite seu e-mail"
+                    class="input input-bordered input-sm mt-2 w-full"
+                  />
 
-                  <p class="underline text-right text-sm">esqueci minha senha</p>
-                  <SBtn class="btn-primary-tail" value="Entrar" @click="LoginAdm()"
-                    >Entrar</SBtn
-                  >
-                </div>
+                  <input
+                    type="password"
+                    v-model="loginInputs.password"
+                    placeholder="Digite sua senha"
+                    class="input input-bordered input-sm mt-2 w-full"
+                  />
+                </form>
+
+                <p class="underline text-right text-sm">esqueci minha senha</p>
+                <button class="btn btn-primary btn-sm mt-2" @click="LoginAdm()">Entrar</button>
               </div>
               <div
                 v-if="authadm.erro"
                 class="btn-danger-tail text-sm mt-2 cursor-default"
-              >
-                {{ authadm.erro }}
-              </div>
+              >{{ authadm.erro }}</div>
               <div
                 v-else-if="authadm.data"
                 class="btn-success-tail text-sm mt-2 cursor-default"
-              >
-                {{ authadm.data }}
-              </div>
-            </template>
-          </SCard>
+              >{{ authadm.data }}</div>
+            </div>
+          </div>
         </div>
       </div>
     </template>

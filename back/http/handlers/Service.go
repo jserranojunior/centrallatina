@@ -5,12 +5,19 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/jserranojunior/intellect/backgo/models"
+	"gorm.io/gorm"
 )
 
 // GetService Edit
 func GetService(c *gin.Context) {
 	var service models.Service
-	DB.Preload("User").First(&service, c.Param("id"))
+	DB.Preload(
+		"OpenAreaServices", func(db *gorm.DB) *gorm.DB {
+			return db.Where("status", 0).Order("area_services.id DESC")
+		}).Preload(
+		"ClosedAreaServices", func(db *gorm.DB) *gorm.DB {
+			return db.Where("status", 1).Order("area_services.id ASC")
+		}).Order("id desc").First(&service, c.Param("id"))
 	c.JSON(200, gin.H{
 		"data": service,
 	})
@@ -31,20 +38,49 @@ func ServiceUpdate(c *gin.Context) {
 	})
 }
 
+func AreaServiceUpdate(c *gin.Context) {
+	var area_service models.AreaService
+	DB.Where("id", c.Param("id")).Find(&area_service)
+	if err := c.Bind(&area_service); err != nil {
+		c.JSON(400, gin.H{
+			"err": err,
+		})
+	}
+	DB.Save(&area_service)
+	c.JSON(200, gin.H{
+		"data": area_service,
+	})
+}
+
 //  GetAllServices getAll
 func GetAllServices(c *gin.Context) {
 	var services []models.Service
-	DB.Preload("User").Find(&services)
-
+	DB.Preload("OpenAreaServices").Where("status", 0).Find(&services)
 	c.JSON(200, gin.H{
 		"data": &services,
+	})
+}
+
+//  GetServicesWithOpenArea
+func GetServicesWithOpenArea(c *gin.Context) {
+	var service models.Service
+	DB.Preload(
+		"OpenAreaServices", func(db *gorm.DB) *gorm.DB {
+			return db.Where("status", 0).Order("area_services.id DESC")
+		}).Order("id desc").First(&service, c.Param("id"))
+
+	c.JSON(200, gin.H{
+		"data": &service,
 	})
 }
 
 //  GetAllServices getAll
 func GetAllServicesPendente(c *gin.Context) {
 	var services []models.Service
-	DB.Where("status", 0).Preload("User").Find(&services)
+	DB.Preload(
+		"OpenAreaServices", func(db *gorm.DB) *gorm.DB {
+			return db.Where("status", 0).Order("area_services.id DESC")
+		}).Order("id desc").Where("status", 0).Find(&services)
 
 	c.JSON(200, gin.H{
 		"data": &services,
@@ -54,9 +90,7 @@ func GetAllServicesPendente(c *gin.Context) {
 //  GetAllServices getAll
 func GetAllServicesType(c *gin.Context) {
 	var services []models.Service
-
 	DB.Where("type", c.Param("type"), "status", 2).Preload("User").Find(&services)
-
 	c.JSON(200, gin.H{
 		"data": &services,
 	})
