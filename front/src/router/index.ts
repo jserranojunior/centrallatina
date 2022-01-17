@@ -13,9 +13,10 @@ import LoginAdm from "@/modules/admin/authadm/pages/loginadm.vue";
 import Users from "@/modules/admin/user/pages/users.vue";
 import EditUser from "@/modules/admin/user/components/editUser.vue";
 import Cadastro from "@/modules/clientes/auth/pages/cadastro.vue";
-
-import Atendimentos from "@/modules/admin/acompanhamento/pages/atendimentos.vue";
-import Recepcao from "@/modules/admin/acompanhamento/pages/recepcao.vue";
+import Atendimento from "@/modules/admin/acompanhamento/pages/atendimentos.vue"
+import esperandoAtendimento from "@/modules/admin/acompanhamento/pages/esperandoAtendimento.vue";
+import showAtendimento from "@/modules/admin/acompanhamento/pages/showAtendimento.vue"
+import Recepcao from "@/modules/admin/acompanhamento/pages/iniciarAtendimento.vue";
 import setAtendimento from "@/modules/admin/acompanhamento/components/setAtendimento.vue";
 import emAtendimento from "@/modules/admin/acompanhamento/components/emAtendimento.vue";
 import CadEmpresas from "@/modules/clientes/institucional/CadEmpresas.vue";
@@ -54,9 +55,21 @@ const routes = [
     beforeEnter: [authadmin],
   },
   {
+    path: "/admin/esperandoatendimentos",
+    name: "esperandoAtendimento",
+    component: esperandoAtendimento,
+    beforeEnter: [authadmin],
+  },
+    {
     path: "/admin/atendimentos",
-    name: "Atendimentos",
-    component: Atendimentos,
+    name: "Atendimento",
+    component: Atendimento,
+    beforeEnter: [authadmin],
+  },
+    {
+    path: "/admin/showatendimentos",
+    name: "showAtendimento",
+    component: showAtendimento,
     beforeEnter: [authadmin],
   },
   {

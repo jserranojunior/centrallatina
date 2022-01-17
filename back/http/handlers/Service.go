@@ -61,6 +61,15 @@ func GetAllServices(c *gin.Context) {
 	})
 }
 
+//  GetAllServices getAll
+func GetAllServicesFinished(c *gin.Context) {
+	var services []models.Service
+	DB.Preload("ClosedAreaServices").Where("status", 1).Find(&services)
+	c.JSON(200, gin.H{
+		"data": &services,
+	})
+}
+
 //  GetServicesWithOpenArea
 func GetServicesWithOpenArea(c *gin.Context) {
 	var service models.Service

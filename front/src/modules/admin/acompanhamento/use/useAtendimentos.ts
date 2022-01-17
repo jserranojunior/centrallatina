@@ -130,7 +130,18 @@ export const useAtendimentos = () => {
       });
   }
 
-
+  async function getAllAtendimentosFinished() {
+    return await HttpAtendimentos.getAllAtendimentosFinished()
+      .then((res) => {
+        if (res) {
+          state.atendimentos = res.data.data;
+        }
+      })
+      .catch((err) => {
+        console.log("abaixo erro login");
+        console.log(err.response.data.erro);
+    });
+  }
   async function getAtendimentoSelecionado(id: number) {
     return await HttpAtendimentos.selectAtendimentoId(id)
       .then((res) => {
@@ -140,7 +151,7 @@ export const useAtendimentos = () => {
             state.open_area_atendimento = res.data.data.open_area_services[0];
          
           }
-          router.push({ name: "emAtendimento" });
+          router.push({ name: "showAtendimento" });
         }
       })
       .catch((err) => {
@@ -271,6 +282,7 @@ function setAtendimentoValue(value:number){
     getAtendimentoSelecionadoWithLastArea,
     filterNameAreaAtendimento,
     clearAtendimentos,
-    setAtendimentoValue
+    setAtendimentoValue,
+    getAllAtendimentosFinished
   };
 };

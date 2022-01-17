@@ -35,7 +35,7 @@
     <div
       class="flex flex-wrap justify-between items-center border-gray-800 border-t border-b bg-whitetheme"
     >
-      <div class="w-full mx-auto bg-white mx-2 my-1">
+      <div class="w-full mx-auto bg-white px-6 my-1">
         <nav
           :class="
             'flex flex-wrap justify-between    mx-auto my-auto ' +
@@ -48,7 +48,7 @@
           <a href="#" class="new-nav-btn" @click="openModalInfo()">Certificação Digital</a>
           <a href="#" class="new-nav-btn" @click="openModalInfo()">Bancarização</a>
           <a href="http://webmail.centrallatina.com/" class="new-nav-btn">Webmail</a>
-          <router-link class="new-nav-btn" to="/cadastro">Cadastro</router-link>
+          <!-- <router-link class="new-nav-btn" to="/cadastro">Cadastro</router-link> -->
           <a href="#" class="new-nav-btn" @click="openModalInfo()">Fale conosco</a>
         </nav>
       </div>

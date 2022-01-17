@@ -38,21 +38,28 @@
         </li>
         <li>
           <router-link
-            v-if="logged && checkAcl('/admin/atendimentos')"
-            to="/admin/atendimentos"
+            v-if="logged && checkAcl('/admin/esperandoatendimentos')"
+            to="/admin/esperandoatendimentos"
             class="hover:bg-whitetheme-2 hover:text-white"
           >
             <span>Esperando Atendimento</span>
           </router-link>
+          <router-link
+            v-if="logged && checkAcl('/admin/atendimentos')"
+            to="/admin/atendimentos"
+            class="hover:bg-whitetheme-2 hover:text-white"
+          >
+            <span>Atendimento Finalizados</span>
+          </router-link>
         </li>
         <li>
-          <router-link
+          <!-- <router-link
             v-if="logged && checkAcl('/admin/users')"
             to="/admin/users"
             class="hover:bg-whitetheme-2 hover:text-white"
           >
             <span>Clientes</span>
-          </router-link>
+          </router-link>-->
         </li>
         <!-- <li>
           <router-link

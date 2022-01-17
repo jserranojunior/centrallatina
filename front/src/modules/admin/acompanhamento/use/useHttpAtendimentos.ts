@@ -46,6 +46,13 @@ class useHttpAuth {
     const urlApi = "/admin/services";
     return ApiConnect.get(urlApi);
   }
+    async getAllAtendimentosFinished(): Promise<void | AxiosResponse> {
+    const ApiConnect = new useApiConnect();
+    const urlApi = "/admin/servicesfinished";
+    return ApiConnect.get(urlApi);
+  }
+
+  
   async getAllAtendimentosPendente(): Promise<void | AxiosResponse> {
     const ApiConnect = new useApiConnect();
     const urlApi = "/admin/servicespendente";

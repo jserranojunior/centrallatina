@@ -116,7 +116,7 @@
 
                   <div class="flex justify-between">
                     <div class="w-full md:w-1/3 px-1">
-                      <router-link :to="{ name: 'Atendimentos' }">
+                      <router-link to="/admin/esperandoatendimentos">
                         <div class="btn-warning-tail mt-4">Voltar</div>
                       </router-link>
                     </div>
